@@ -68,6 +68,10 @@ body {
     min-height: 50px;
     flex-wrap: wrap;
 }
+.center-teal a{
+    text-decoration: none;
+    color: #fff;
+}
 
 .center-teal span {
     white-space: nowrap;
@@ -2803,3 +2807,6 @@ form textarea {
     white-space: nowrap;
     border: 0;
 }
+
+
+

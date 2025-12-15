@@ -571,15 +571,21 @@ height:70vh;
         </div>
 
         <!-- CENTER TEAL with dropdowns -->
-        <div class="center-teal">
-            <span>📄 Download Brochure</span>
+<div class="center-teal" id="centerTealBar">
 
+    <a href="brochure.pdf" class="ct-item" download>
+        📄 <span>Download Brochure</span>
+    </a>
 
+    <a href="Blog.html" class="ct-item">
+        📝 <span>Blog</span>
+    </a>
 
-            <span>Blog</span>
+    <a href="tel:+917007522507" class="ct-item">
+        📞 <span>+91 70075 22507</span>
+    </a>
 
-            <span>📞+91 70075 22507</span>
-        </div>
+</div>
 
         <!-- HAMBURGER BUTTON -->
         <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
@@ -1175,7 +1181,7 @@ function scrollToEnquiry() {
 
 // ===== OPEN WHATSAPP =====
 function openWhatsApp() {
-    const phone = "18003093737";
+    const phone = "+917007522507";
     const message = "Hello APL Apollo, I'm interested in your windows and doors. Can you provide more information?";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');

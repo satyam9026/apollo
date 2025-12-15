@@ -10,94 +10,79 @@
 <body>
 
 <style>
-.about-section-unique {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 40px 5%;
-  position: relative;
+/* ================= GLOBAL ================= */
+*{
+  box-sizing:border-box;
 }
 
-.about-text-unique {
-  flex: 1 1 50%;
-  z-index: 2;
+/* ================= ABOUT SECTION ================= */
+.about-section-unique{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  padding:40px 5%;
+  position:relative;
 }
 
-.breadcrumb {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #e67e22;
+.about-text-unique{
+  flex:1 1 50%;
+  z-index:2;
 }
 
-.breadcrumb span {
-  color: #000;
+.breadcrumb{
+  font-size:16px;
+  margin-bottom:18px;
+  color:#e67e22;
 }
 
-.about-text-unique h1 {
-  font-size: 35px;
-  color: #e67e22;
-  margin: 0 0 20px;
+.breadcrumb span{
+  color:#000;
 }
 
-.about-text-unique p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-  width: 100%;
-  font-size: 15px;
-  color: #818080;
+.about-text-unique h1{
+  font-size:36px;
+  color:#e67e22;
+  margin-bottom:20px;
 }
 
-.about-image-unique {
-  flex: 1 1 50%;
-  position: relative;
+.about-text-unique p{
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:15px;
+  color:#818080;
 }
 
-.about-image-unique img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  position: relative;
-  top: 80px;           /* Image नीचे आ जाएगी */
+/* IMAGE */
+.about-image-unique{
+  flex:1 1 50%;
+  position:relative;
 }
 
-/* RESPONSIVE */
-@media(max-width: 1024px){
-  .about-image-unique img{
-    top: 40px;
-  }
+.about-image-unique img{
+  width:100%;
+  height:auto;
+  max-height:280px;
+  object-fit:cover;
+  position:relative;
+  top:60px;
 }
 
-@media(max-width: 900px){
-  .about-section-unique{
-    flex-direction: column;
-  }
-  .about-text-unique h1{
-    font-size: 40px;
-  }
-  .about-image-unique img{
-    top: 20px;
-    width: 100%;
-  }
-}
-
-@media(max-width: 600px){
-  .about-text-unique h1{
-    font-size: 32px;
-  }
-}
-
+/* ================= WHY SECTION ================= */
 .apl-why-wrapper{
   display:flex;
   gap:40px;
   padding:50px 5%;
 }
 
-.apl-why-left{ flex:1.2; }
+.apl-why-left{
+  flex:1.2;
+}
 
 .apl-why-title{
   font-size:42px;
   font-weight:300;
 }
+
 .apl-why-title span{
   color:#f26f21;
   font-weight:700;
@@ -107,18 +92,18 @@
   font-size:16px;
   line-height:1.8;
   color:#777;
-  max-width:90%;
+  max-width:95%;
 }
 
 .apl-why-stats{
   display:flex;
   gap:40px;
-  margin-top:50px;
+  margin-top:40px;
+  flex-wrap:wrap;
 }
 
 .apl-stat h3{
-  font-size:44px;
-  margin:0;
+  font-size:40px;
 }
 
 .apl-stat p{
@@ -129,9 +114,11 @@
 .apl-why-right img{
   width:100%;
   max-width:420px;
+  height:auto;
   object-fit:cover;
 }
 
+/* ================= SIDE NAV ================= */
 .apl-side-nav{
   width:220px;
   border-left:1px solid #ddd;
@@ -139,7 +126,7 @@
 }
 
 .apl-nav-item{
-  padding:15px 0;
+  padding:14px 0;
   cursor:pointer;
   color:#888;
   position:relative;
@@ -148,7 +135,7 @@
 .apl-nav-item::before{
   content:'';
   position:absolute;
-  left:-30px;
+  left:-28px;
   top:50%;
   width:10px;
   height:10px;
@@ -165,43 +152,110 @@
   background:#f26f21;
 }
 
-@media(max-width:1100px){
-  .apl-why-wrapper{ flex-direction:column; }
+/* ================= SCROLL ANIMATION ================= */
+.about-section-unique,
+.apl-why-wrapper{
+  opacity:0;
+  transition:all 1s ease-out;
+}
+
+.about-section-unique{
+  transform:translateX(-40px);
+}
+
+.apl-why-wrapper{
+  transform:translateX(40px);
+}
+
+.slide-in-left,
+.slide-in-right{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+/* ---- Large Desktop (1400px+) ---- */
+@media(max-width:1400px){
+  .about-text-unique h1{ font-size:34px; }
+}
+
+/* ---- Laptop (1200px) ---- */
+@media(max-width:1200px){
+  .apl-why-title{ font-size:38px; }
+  .apl-why-desc{ font-size:15px; }
+}
+
+/* ---- Tablet Landscape (1024px) ---- */
+@media(max-width:1024px){
+  .about-image-unique img{ top:35px; }
+  .apl-why-wrapper{
+    flex-direction:column;
+  }
   .apl-side-nav{
     width:100%;
     border:none;
+    padding-left:0;
     display:flex;
     gap:20px;
+    flex-wrap:wrap;
   }
-  .apl-nav-item::before{ display:none; }
+  .apl-nav-item::before{
+    display:none;
+  }
 }
 
-/* ===== SCROLL ANIMATION STYLES ===== */
-.about-section-unique,
-.apl-why-wrapper {
-  opacity: 0;
-  transition: all 1s ease-out;
+/* ---- Tablet Portrait (900px) ---- */
+@media(max-width:900px){
+  .about-section-unique{
+    flex-direction:column;
+  }
+  .about-text-unique h1{
+    font-size:32px;
+  }
+  .about-image-unique img{
+    top:20px;
+  }
 }
 
-/* START POSITIONS */
-.about-section-unique {
-  transform: translateX(-50px);
+/* ---- Mobile Large (768px) ---- */
+@media(max-width:768px){
+  .about-text-unique p{
+    font-size:14px;
+  }
+  .apl-why-title{
+    font-size:32px;
+  }
+  .apl-why-stats{
+    gap:25px;
+  }
 }
 
-.apl-why-wrapper {
-  transform: translateX(50px);
+/* ---- Mobile (576px) ---- */
+@media(max-width:576px){
+  .about-section-unique{
+    padding:30px 15px;
+  }
+  .about-text-unique h1{
+    font-size:28px;
+  }
+  .apl-why-title{
+    font-size:28px;
+  }
+  .apl-stat h3{
+    font-size:32px;
+  }
 }
 
-/* SLIDE-IN WHEN VISIBLE */
-.slide-in-left {
-  opacity: 1;
-  transform: translateX(0);
+/* ---- Small Mobile (360px) ---- */
+@media(max-width:360px){
+  .about-text-unique h1{
+    font-size:24px;
+  }
 }
 
-.slide-in-right {
-  opacity: 1;
-  transform: translateX(0);
-}
 </style>
 
 
@@ -218,14 +272,21 @@
         </div>
 
         <!-- CENTER TEAL with dropdowns -->
-        <div class="center-teal">
-            <span>📄 Download Brochure</span>
+<div class="center-teal" id="centerTealBar">
 
+    <a href="brochure.pdf" class="ct-item" download>
+        📄 <span>Download Brochure</span>
+    </a>
 
-            <span>Blog</span>
+    <a href="Blog.html" class="ct-item">
+        📝 <span>Blog</span>
+    </a>
 
-            <span>📞+91 70075 22507</span>
-        </div>
+    <a href="tel:+917007522507" class="ct-item">
+        📞 <span>+91 70075 22507</span>
+    </a>
+
+</div>
 
         <!-- HAMBURGER BUTTON -->
         <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
@@ -618,7 +679,7 @@ function scrollToEnquiry() {
 
 // ===== OPEN WHATSAPP =====
 function openWhatsApp() {
-    const phone = "18003093737";
+    const phone = "+917007522507";
     const message = "Hello APL Apollo, I'm interested in your windows and doors. Can you provide more information?";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
