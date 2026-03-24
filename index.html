@@ -1,1063 +1,1139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APL Prestige Windows - Responsive Website</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Window Windows - Responsive Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- HEADER SECTION -->
-<div class="header-container">
-    <div class="top-section">
-        <!-- LOGOS CONTAINER -->
-        <div class="logos-container">
-            <!-- LEFT LOGO -->
-            <div class="left-box">
-            <a href="index.html"><img src="image/logo.png" alt="APL Prestige Logo">
-</a>
+    <!-- HEADER SECTION -->
+    <div class="header-container">
+        <div class="top-section">
+            <div class="logos-container">
+                <div class="left-box">
+                    <a href="index.html">
+                        <img style="width: 150px;height: 200px;" src="image/logo.png" alt="Prestige Window Logo">
+                    </a>
+                </div>
             </div>
+
+            <div class="center-teal" id="centerTealBar">
+                <a href="brochure.pdf" class="ct-item" download>📄 <span>Download Brochure</span></a>
+                <a href="Blog.html" class="ct-item">📝 <span>Blog</span></a>
+                <a href="tel:+917007522507" class="ct-item">📞 <span>+91 70075 22507</span></a>
+                <a href="" class="ct-item">GSTIN- <span>09AXLPR7719R1Z7</span></a>
+                <a href="cart.html" class="ct-item"><span>Add To Cart</span></a>
+
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
         </div>
 
-        <!-- CENTER TEAL with dropdowns -->
-<div class="center-teal" id="centerTealBar">
+        <!-- DESKTOP NAV -->
+        <nav class="navbar">
+            <a href="index.html">Home</a>
 
-    <a href="brochure.pdf" class="ct-item" download>
-        📄 <span>Download Brochure</span>
-    </a>
+            <div class="nav-dropdown">
+                <a href="#">About</a>
+                <div class="nav-dropdown-content">
+                    <a href="CompanyOverview.html">Company Overview</a>
+                    <a href="VisionMission.html">Vision & Mission</a>
+                    <a href="Milestones.html">Milestones</a>
+                    <a href="BoardofDirectors.html">Board of Directors</a>
+                    <a href="MD's Desk.html">MD's Desk</a>
+                </div>
+            </div>
 
-    <a href="Blog.html" class="ct-item">
-        📝 <span>Blog</span>
-    </a>
+            <a href="#product">Products</a>
 
-    <a href="tel:+917007522507" class="ct-item">
-        📞 <span>+91 70075 22507</span>
-    </a>
+            <!-- ✅ ADVANTAGES LINK ADDED -->
+            <a href="advantages.html">Advantages</a>
 
-</div>
+            <a href="#Space">Spaces</a>
 
+            <div class="nav-dropdown">
+                <a href="#">Showcase</a>
+                <div class="nav-dropdown-content">
+                    <a href="#uniqueGallerySection">Gallery</a>
+                </div>
+            </div>
+            <a href="refund-policy.html">Refund policy</a>
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsAndConditions.html">Terms and conditions </a>
 
-        <!-- HAMBURGER BUTTON -->
-        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+            <a href="ContactUs.html">Contact Us</a>
+        </nav>
     </div>
 
-    <!-- DESKTOP NAV -->
-    <nav class="navbar">
-        <a href="index.html">Home</a>
+    <!-- MOBILE NAV -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+    <nav class="mobile-nav" id="mobileMenu">
+        <button class="mobile-close-btn" onclick="toggleMenu()">×</button>
 
-        <div class="nav-dropdown">
-            <a href="#">About</a>
-            <div class="nav-dropdown-content">
-                <a href="CompanyOverview.html">Company Overview</a>
-                <a href="VisionMission.html">Vision & Mission</a>
-                <a href="Milestones.html">Milestones</a>
-                <a href="BoardofDirectors.html">Board of Directors </a>
-                <a href="MD's Desk.html">MD's Desk </a>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+
+        <!-- ✅ ADVANTAGES LINK ADDED -->
+        <a href="advantages.html" onclick="toggleMenu()">Advantages</a>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                About <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-dropdown-content">
+                <a href="CompanyOverview.html" onclick="toggleMenu()">Company Overview</a>
+                <a href="VisionMission.html" onclick="toggleMenu()">Vision & Mission</a>
+                <a href="Milestones.html" onclick="toggleMenu()">Milestones</a>
+                <a href="BoardofDirectors.html" onclick="toggleMenu()">Board of Directors</a>
+                <a href="MD's Desk.html" onclick="toggleMenu()">MD's Desk</a>
             </div>
         </div>
 
-        <a href="#product">Products</a>
-        <a href="#Space">Spaces</a>
+        <a href="#product" onclick="toggleMenu()">Products</a>
+        <a href="#Space" onclick="toggleMenu()">Spaces</a>
 
-        <div class="nav-dropdown">
-            <a href="#">Showcase</a>
-            <div class="nav-dropdown-content">
-                <a href="#uniqueGallerySection">Gallery</a>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                Showcase <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-dropdown-content">
+                <a href="#uniqueGallerySection" onclick="toggleMenu()">Gallery</a>
             </div>
         </div>
+        <a href="refund-policy.html" onclick="toggleMenu()">Refund policy</a>
+        <a href="refund-policy.html" onclick="toggleMenu()">Refund policy</a>
+        <a href="TermsAndConditions.html" onclick="toggleMenu()">Terms and conditions</a>
 
-        <a href="ContactUs.html">Contact Us</a>
+        <a href="ContactUs.html" onclick="toggleMenu()">Contact Us</a>
     </nav>
-</div>
 
-<!-- MOBILE NAV - Slides from right -->
-<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
-<nav class="mobile-nav" id="mobileMenu">
-    <button class="mobile-close-btn" onclick="toggleMenu()" aria-label="Close menu">×</button>
-    
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-
-    <div class="mobile-dropdown">
-        <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
-            About <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="mobile-dropdown-content">
-            <a href="CompanyOverview.html" onclick="toggleMenu()">Company Overview</a>
-            <a href="VisionMission.html" onclick="toggleMenu()">Vision & Mission</a>
-            <a href="Milestones.html" onclick="toggleMenu()">Milestones</a>
-            <a href="BoardofDirectors.html" onclick="toggleMenu()">Board of Directors</a>
-            <a href="MD's Desk.html" onclick="toggleMenu()">MD's Desk</a>
-        </div>
-    </div>
-
-    <a href="#product" onclick="toggleMenu()">Products</a>
-    <a href="#Space" onclick="toggleMenu()">Spaces</a>
-
-    <div class="mobile-dropdown">
-        <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
-            Showcase <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="mobile-dropdown-content">
-            <a href="#uniqueGallerySection" onclick="toggleMenu()">Gallery</a>
-        </div>
-    </div>
-
-    <a href="ContactUs.html" onclick="toggleMenu()">Contact Us</a>
-    
-    <!-- Additional mobile-only links -->
-    <div style="padding: 20px; border-top: 1px solid #eee; margin-top: 10px;">
-        <a href="#" class="mobile-contact" onclick="toggleMenu()" style="display: block; padding: 10px 0; color: #03a9b9;">
-            <i class="fas fa-phone"></i>+91 70075 22507
-        </a>
-        <a href="#" class="mobile-brochure" onclick="toggleMenu()" style="display: block; padding: 10px 0; color: #e56913;">
-            <i class="fas fa-download"></i> Download Brochure
-        </a>
-    </div>
-</nav>
-
-<!-- HERO SLIDER -->
-<section class="hero-slider">
-  <div class="slider-container">
-    <div class="slide active">
-      <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Modern Windows">
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Luxury Doors">
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Premium Solutions">
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <div class="nav-buttons">
-    <button class="prev" aria-label="Previous slide">&#10094;</button>
-    <button class="next" aria-label="Next slide">&#10095;</button>
-  </div>
-
-  <!-- Indicators -->
-  <div class="indicators">
-    <span class="dot active" aria-label="Slide 1"></span>
-    <span class="dot" aria-label="Slide 2"></span>
-    <span class="dot" aria-label="Slide 3"></span>
-  </div>
-</section>
-
-<!-- FLOATING GET QUOTE -->
-<div class="get-quote" role="button" tabindex="0" onclick="scrollToEnquiry()">Get Quote</div>
-
-<!-- MAIN SECTION -->
-<section class="section-wrapper">
-  <div class="left-bg"></div>
-  <div class="left-content">
-    <h3>The Prestige Touch Where</h3>
-    <h1>Innovation Meets<br>Elegance and<br>Lasting Strength</h1>
-  </div>
-  <div class="right-content">
-    <h2>About APL Prestige</h2>
-    <p>APL Prestige is a renowned name for its commitment, quality and innovation, delivering premium products infused with the latest technologies.</p>
-    <p>Our pan-India network includes over 1,000 channel partners and 40,000+ customer touchpoints, ensuring seamless accessibility and service.</p>
-    <p>Experience the elegance of our extensive collection of high-performance uPVC windows and doors crafted to elevate the beauty of your home while shielding it from the toughest weather conditions.</p>
-  </div>
-</section>
-
-<!-- WHATSAPP BUTTON -->
-<div class="whatsapp-btn" role="button" tabindex="0" onclick="openWhatsApp()" aria-label="Contact via WhatsApp">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</div>
-
-<!-- WHY SECTION -->
-<section class="section-why">
-  <!-- LEFT AUTO SCROLL -->
-  <div class="left-scroll-box">
-    <div class="scroll-images" id="scrollBox">
-      <!-- Images -->
-      <img src="image/3 track 3 glass sliding window.jpg" alt="Window design 1">
-      <img src="image/Casement Door windows.jpg" alt="Window design 2">
-      <img src="image/Tilt and tern casement .jpg" alt="Window design 3">
-      <img src="image/Casement windows.jpg" alt="Window design 4">
-      <img src="image/3 track sliding door.jpg" alt="Window design 5">
-
-      <!-- Duplicate for infinite loop -->
-      <img src="image/3 track 3 glass sliding window.jpg" alt="Window design 1">
-      <img src="image/Casement Door windows.jpg" alt="Window design 2">
-      <img src="image/Tilt and tern casement .jpg" alt="Window design 3">
-      <img src="image/Casement windows.jpg" alt="Window design 4">
-      <img src="image/3 track sliding door.jpg" alt="Window design 5">
-    </div>
-  </div>
-
-  <!-- RIGHT CONTENT -->
-  <div class="right-content-why">
-    <h1>Why APL Prestige</h1>
-    <p>Because your spaces deserve care, not just construction.</p>
-    <p>
-      APL Prestige creates doors and windows that go beyond function.
-      Each piece is crafted to offer protection, peace, and a sense of belonging to your space.
-    </p>
-    <p>
-      Whether it's rain, extreme winds, sandstorms, or summer heat,
-      our systems stand resilient, keeping you safe, comfortable, and confident every day.
-    </p>
-  </div>
-</section>
-
-
-
-<!-- SERVICES SECTION -->
-<section class="services-section">
-    <div class="container">
-      <div class="service-item">
-        <div class="service-number">01</div>
-        <h3>Consultation Visits</h3>
-        <p>We begin with a detailed consultation to know your preferences and requirements.</p>
-      </div>
-
-      <div class="service-item">
-        <div class="service-number">02</div>
-        <h3>Survey & Final Measurements</h3>
-        <p>Our on-site team conducts accurate measurements to finalize the right design for your space.</p>
-      </div>
-
-      <div class="service-item">
-        <div class="service-number">03</div>
-        <h3>Delivery & Installation</h3>
-        <p>Expect timely delivery and expert installation handled by our professional team.</p>
-      </div>
-
-      <div class="service-item">
-        <div class="service-number">04</div>
-        <h3>Customised Designs</h3>
-        <p>We provide tailored design solutions that reflect your vision and requirements.</p>
-      </div>
-
-      <div class="service-item">
-        <div class="service-number">05</div>
-        <h3>State-of-the-Art Manufacturing</h3>
-        <p>Our high-quality manufacturing process ensures durability, precision, and lasting performance.</p>
-      </div>
-
-      <div class="service-item">
-        <div class="service-number">06</div>
-        <h3>After-Sales Support</h3>
-        <p>Our commitment extends well beyond installation, providing ongoing support to ensure your doors and windows continue to perform flawlessly.</p>
-      </div>
-    </div>
-</section>
-
-<!-- PRODUCTS SECTION -->
-<section class="products-section" id="product">
-    <div class="logo">
-        <i class="fas fa-building logo-icon"></i>
-        <span>APL Apollo</span>
-    </div>
-    
-    <div class="section-header">
-        <h1>Our Products</h1>
-
-    </div>
-</section>
-
-<!-- IMAGE GALLERY -->
-<div class="gallery-container">
-    <p class="gallery-subtitle">Explore our premium collection of windows designed for every architectural style and requirement.</p>
-    
-    <div class="image-gallery">
-        <!-- Villa Window -->
-        <div class="image-item villa-item">
-            <div class="image-wrapper">
-                <img src="image/3 track 3 glass sliding window.jpg" 
-                     alt="Villa Window" 
-                     class="window-img">
+    <!-- HERO SLIDER -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="image/image.jpg" alt="Modern Windows">
             </div>
-            <div class="image-label">
-                <h3> 3 track 3 glass sliding window</h3>
-                <p class="image-description">Elegant and spacious windows designed for luxury villas with panoramic views.</p>
+            <div class="slide">
+                <img src="image/patio.webp" alt="Luxury Doors">
+            </div>
+            <div class="slide">
+                <img src="image/images.jpeg" alt="Premium Solutions">
             </div>
         </div>
-        
-        <!-- Tilt & Turn Window -->
-        <div class="image-item tilt-turn-item">
-            <div class="image-wrapper">
-                <img src="image/Tilt and tern casement .jpg" 
-                     alt="Tilt & Turn Window" 
-                     class="window-img">
-            </div>
-            <div class="image-label">
-                <h3> Tilt & Turn Window</h3>
-                <p class="image-description">Versatile windows that tilt for ventilation and turn inward for easy cleaning.</p>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="prev" aria-label="Previous slide">&#10094;</button>
+            <button class="next" aria-label="Next slide">&#10095;</button>
+        </div>
+
+        <!-- Indicators -->
+        <div class="indicators">
+            <span class="dot active" aria-label="Slide 1"></span>
+            <span class="dot" aria-label="Slide 2"></span>
+            <span class="dot" aria-label="Slide 3"></span>
+        </div>
+    </section>
+
+    <!-- FLOATING GET QUOTE -->
+    <div class="get-quote" role="button" tabindex="0" onclick="scrollToEnquiry()">Get Quote</div>
+
+    <!-- MAIN SECTION -->
+    <section class="section-wrapper">
+        <div class="left-bg"></div>
+        <div class="left-content">
+            <h3>The Prestige Touch Where</h3>
+            <h1>Innovation Meets<br>Elegance and<br>Lasting Strength</h1>
+        </div>
+        <div class="right-content">
+            <h2>About Prestige Window</h2>
+            <p>Prestige Window is a renowned name for its commitment, quality and innovation, delivering premium
+                products infused with the latest technologies.</p>
+            <p>Our pan-India network includes over 1,000 channel partners and 40,000+ customer touchpoints, ensuring
+                seamless accessibility and service.</p>
+            <p>Experience the elegance of our extensive collection of high-performance uPVC windows and doors crafted to
+                elevate the beauty of your home while shielding it from the toughest weather conditions.</p>
+        </div>
+    </section>
+
+    <!-- WHATSAPP BUTTON -->
+    <div class="whatsapp-btn" role="button" tabindex="0" onclick="openWhatsApp()" aria-label="Contact via WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </div>
+
+    <!-- WHY SECTION -->
+    <section class="section-why">
+        <!-- LEFT AUTO SCROLL -->
+        <div class="left-scroll-box">
+            <div class="scroll-images" id="scrollBox">
+                <!-- Images -->
+                <img src="image/3 track 3 glass sliding window.jpg" alt="Window design 1">
+                <img src="image/Casement Door windows.jpg" alt="Window design 2">
+                <img src="image/Tilt and tern casement .jpg" alt="Window design 3">
+                <img src="image/Casement windows.jpg" alt="Window design 4">
+                <img src="image/3 track sliding door.jpg" alt="Window design 5">
+
+                <!-- Duplicate for infinite loop -->
+                <img src="image/3 track 3 glass sliding window.jpg" alt="Window design 1">
+                <img src="image/Casement Door windows.jpg" alt="Window design 2">
+                <img src="image/Tilt and tern casement .jpg" alt="Window design 3">
+                <img src="image/Casement windows.jpg" alt="Window design 4">
+                <img src="image/3 track sliding door.jpg" alt="Window design 5">
             </div>
         </div>
-        
-        <!-- Sliding Windows -->
-        <div class="image-item sliding-item">
-            <div class="image-wrapper">
-                <img src="image/Casement windows.jpg" 
-                     alt="Sliding Windows" 
-                     class="window-img">
-            </div>
-            <div class="image-label">
-                <h3> Casement windows</h3>
-                <p class="image-description">Space-saving windows that glide smoothly on tracks, perfect for modern designs.</p>
-            </div>
-        </div>
-        
-        <!-- Casement Windows -->
-        <div class="image-item casement-item">
-            <div class="image-wrapper">
-                <img src="image/Slide and fold.jpg" 
-                     alt="Casement Windows" 
-                     class="window-img">
-            </div>
-            <div class="image-label">
-                <h3> Slide and fold</h3>
-                <p class="image-description">Classic hinged windows that open outward, providing excellent ventilation.</p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="instructions">
-        <h3><i class="fas fa-mouse-pointer"></i> Interactive Demo</h3>
-        <p>Hover over any window image to see a colorful transformation effect. Each window type has a unique color overlay that represents its character and style.</p>
-        <button class="demo-button">Try Demo Effect</button>
-    </div>
-</div>
 
-<!-- UNIQUE EVERY SPACE SECTION -->
-<section class="unique-every-space-section" id="Space">
-  <div class="unique-container">
-    <div class="unique-header">
-      <h2><span>Designed for </span>Every Space</h2>
-      <div class="unique-tabs-switch">
-        <button class="unique-tab-btn active" data-type="residential">Residential</button>
-        <button class="unique-tab-btn" data-type="commercial">Commercial</button>
-      </div>
-    </div>
-
-    <div class="unique-content-wrapper">
-      <!-- Left vertical tabs -->
-      <div class="unique-tabs-list" id="uniqueTabsList"></div>
-
-      <!-- Right image preview -->
-      <div class="unique-preview">
-        <img id="uniquePreviewImg" src="" alt="Space Preview">
-        <h3 id="uniquePreviewTitle"></h3>
-        <p id="uniquePreviewSubtitle"></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- APL FEATURES SECTION -->
-<section id="apl-features-section">
-    <div class="apl-features-container">
-        <!-- LEFT SIDE -->
-        <div class="apl-left-box">
-            <h3 class="apl-small-title">APL Prestige</h3>
-            <h1 class="apl-main-title">
-                Features & <br>
-                Benefits
-            </h1>
-            <p class="apl-description">
-                APL Prestige's high-performance windows bring a refined architectural appeal to your home.
-                Designed to block out street noise, dust, pollution, rain, and strong winds, they offer
-                exceptional protection. These windows are also energy-efficient, durable, and require
-                minimal maintenance, making them a smart and lasting choice.
+        <!-- RIGHT CONTENT -->
+        <div class="right-content-why">
+            <h1>Why Prestige Window</h1>
+            <p>Because your spaces deserve care, not just construction.</p>
+            <p>
+                Prestige Window creates doors and windows that go beyond function.
+                Each piece is crafted to offer protection, peace, and a sense of belonging to your space.
             </p>
+            <p>
+                Whether it's rain, extreme winds, sandstorms, or summer heat,
+                our systems stand resilient, keeping you safe, comfortable, and confident every day.
+            </p>
+        </div>
+    </section>
 
-            <!-- FEATURES GRID -->
-            <div class="apl-features-grid">
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3208/3208720.png" class="apl-icon" alt="Weather Resistant">
-                    <span>Weather <br> Resistant</span>
+
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section">
+        <div class="container">
+            <div class="service-item">
+                <div class="service-number">01</div>
+                <h3>Consultation Visits</h3>
+                <p>We begin with a detailed consultation to know your preferences and requirements.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">02</div>
+                <h3>Survey & Final Measurements</h3>
+                <p>Our on-site team conducts accurate measurements to finalize the right design for your space.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">03</div>
+                <h3>Delivery & Installation</h3>
+                <p>Expect timely delivery and expert installation handled by our professional team.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">04</div>
+                <h3>Customised Designs</h3>
+                <p>We provide tailored design solutions that reflect your vision and requirements.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">05</div>
+                <h3>State-of-the-Art Manufacturing</h3>
+                <p>Our high-quality manufacturing process ensures durability, precision, and lasting performance.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-number">06</div>
+                <h3>After-Sales Support</h3>
+                <p>Our commitment extends well beyond installation, providing ongoing support to ensure your doors and
+                    windows continue to perform flawlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="product">
+        <div class="logo">
+            <i class="fas fa-building logo-icon"></i>
+            <span>APL Apollo</span>
+        </div>
+
+        <div class="section-header">
+            <h1>Our Products</h1>
+
+        </div>
+    </section>
+
+    <style>
+        .product-price {
+            color: #e67e22;
+            font-size: 1.1em;
+            margin-top: 8px;
+        }
+
+        .add-cart-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .add-cart-btn:hover {
+            background: #1e8449;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .price-note {
+            font-size: 0.75em;
+            color: #555;
+            margin-top: 4px;
+        }
+    </style>
+
+    <div class="gallery-container">
+        <p class="gallery-subtitle">Explore our premium collection of windows designed for every architectural style and
+            requirement.</p>
+
+        <div class="image-gallery">
+
+            <!-- Product 1 -->
+            <div class="image-item villa-item">
+                <div class="image-wrapper">
+                    <img src="image/3 track 3 glass sliding window.jpg" alt="Villa Window" class="window-img">
                 </div>
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448608.png" class="apl-icon" alt="Low Maintenance">
-                    <span>Low <br> Maintenance</span>
-                </div>
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448577.png" class="apl-icon" alt="Excellent Insulation">
-                    <span>Excellent <br> insulation</span>
-                </div>
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448554.png" class="apl-icon" alt="Fire Retardant">
-                    <span>Fire <br> Retardant</span>
-                </div>
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448591.png" class="apl-icon" alt="Termite & Corrosion Proof">
-                    <span>Termite & Corrosion <br> Proof</span>
-                </div>
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448585.png" class="apl-icon" alt="Eco-Conscious">
-                    <span>Eco- <br> Conscious</span>
-                </div>
-                <div class="apl-feature-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3448/3448567.png" class="apl-icon" alt="Strong & Secure">
-                    <span>Strong & <br> Secure</span>
+
+                <div class="image-label">
+                    <h3>3 track 3 glass sliding window</h3>
+                    <p class="image-description">Elegant and spacious windows designed for luxury villas with panoramic
+                        views.</p>
+
+                    <div class="price-row">
+                        <p class="product-price"><strong>Price: ₹100</strong></p>
+                        <button class="add-cart-btn">Add to Cart</button>
+                    </div>
+
+                    <p class="price-note">
+                        <strong>*NOTE*</strong> - THIS IS INDICATIVE PRICE ONLY OF OUR PRODUCTS. ACTUAL AMOUNT VARIES AS
+                        PER CUSTOMER'S REQUIREMENTS. THIS PRICE WILL BE CONSIDERED SITE VISITING CHARGES.
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="apl-right-box">
-            <img src="image/Casement Door windows.jpg" class="apl-window-img" alt="APL Prestige Window">
-        </div>
-    </div>
 
-    <!-- BACKGROUND SHAPES -->
-    <div class="apl-bg-circle big"></div>
-    <div class="apl-bg-circle small"></div>
-</section>
+            <!-- Product 2 -->
+            <div class="image-item tilt-turn-item">
+                <div class="image-wrapper">
+                    <img src="image/Tilt and tern casement .jpg" alt="Tilt & Turn Window" class="window-img">
+                </div>
 
-<!-- ENQUIRY SECTION -->
-<section class="enquiry-section">
-    <!-- LEFT SIDE IMAGE -->
-    <div class="left-image">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Window Design">
-    </div>
+                <div class="image-label">
+                    <h3>Tilt & Turn Window</h3>
+                    <p class="image-description">Versatile windows that tilt for ventilation and turn inward for easy
+                        cleaning.</p>
 
-    <!-- RIGHT SIDE FORM -->
-    <div class="form-box">
-        <h2>Enquire Now</h2>
-        <form id="enquiryForm">
-            <div class="row">
-                <input type="text" placeholder="Name*" required>
-                <input type="tel" placeholder="Phone*" required>
-            </div>
-            <div class="row">
-                <input type="email" placeholder="Email*" required>
-            </div>
-            <div class="row">
-                <select required>
-                    <option value="">Select State*</option>
-                    <option>Maharashtra</option>
-                    <option>Delhi</option>
-                    <option>Karnataka</option>
-                    <option>Tamil Nadu</option>
-                </select>
-                <select required>
-                    <option value="">Select City*</option>
-                    <option>Mumbai</option>
-                    <option>Pune</option>
-                    <option>Bengaluru</option>
-                    <option>Chennai</option>
-                </select>
-            </div>
-            <textarea placeholder="Message"></textarea>
-            <label class="check">
-                <input type="checkbox" required>
-                I authorize updates via Email/SMS/WhatsApp/Call.
-            </label>
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
-    </div>
-</section>
+                    <div class="price-row">
+                        <p class="product-price"><strong>Price: ₹500</strong></p>
+                        <button class="add-cart-btn">Add to Cart</button>
+                    </div>
 
-<!-- STATS ROW -->
-<section class="stats-row">
-    <div class="stat-item">
-        <h2>9</h2>
-        <p>state-of-the-art manufacturing<br>plants located across India</p>
-    </div>
-    <div class="divider"></div>
-    <div class="stat-item">
-        <h2>2.16 Lacs</h2>
-        <p>MTPA Production capacity</p>
-    </div>
-    <div class="divider"></div>
-    <div class="stat-item">
-        <h2>1,000+</h2>
-        <p>channel partners ensuring<br>strong pan-India market<br>presence</p>
-    </div>
-    <div class="divider"></div>
-    <div class="stat-item">
-        <h2>40,000+</h2>
-        <p>customer touchpoints for<br>seamless service and support</p>
-    </div>
-    <div class="divider"></div>
-    <div class="stat-item">
-        <h2>2,600+</h2>
-        <p>SKUs across a wide product<br>range</p>
-    </div>
-</section>
+                    <p class="price-note">
+                        <strong>*NOTE*</strong> - THIS IS INDICATIVE PRICE ONLY OF OUR PRODUCTS. ACTUAL AMOUNT VARIES AS
+                        PER CUSTOMER'S REQUIREMENTS. THIS PRICE WILL BE CONSIDERED SITE VISITING CHARGES.
+                    </p>
+                </div>
+            </div>
 
-<!-- GALLERY SECTION -->
-<section id="uniqueGallerySection" class="gallery-section-unique">
-    <h2 id="uniqueGalleryTitle" class="gallery-title-unique">Gallery</h2>
-    <div id="uniqueSliderWrapper" class="slider-wrapper-unique">
-        <div id="uniqueSlider" class="slider-unique">
-            <!-- 8 SLIDES WITH IMAGES -->
-            <div class="slide-unique">
-                <img src="image/Casement windows.jpg" alt="Window 1">
+
+            <!-- Product 3 -->
+            <div class="image-item sliding-item">
+                <div class="image-wrapper">
+                    <img src="image/Casement windows.jpg" alt="Sliding Windows" class="window-img">
+                </div>
+
+                <div class="image-label">
+                    <h3>Casement windows</h3>
+                    <p class="image-description">Space-saving windows that glide smoothly on tracks, perfect for modern
+                        designs.</p>
+
+                    <div class="price-row">
+                        <p class="product-price"><strong>Price: ₹1000</strong></p>
+                        <button class="add-cart-btn">Add to Cart</button>
+                    </div>
+
+                    <p class="price-note">
+                        <strong>*NOTE*</strong> - THIS IS INDICATIVE PRICE ONLY OF OUR PRODUCTS. ACTUAL AMOUNT VARIES AS
+                        PER CUSTOMER'S REQUIREMENTS. THIS PRICE WILL BE CONSIDERED SITE VISITING CHARGES.
+                    </p>
+                </div>
             </div>
-            <div class="slide-unique">
-                <img src="image/Tilt and tern casement .jpg" alt="Window 2">
+
+
+            <!-- Product 4 -->
+            <div class="image-item casement-item">
+                <div class="image-wrapper">
+                    <img src="image/Slide and fold.jpg" alt="Slide and fold" class="window-img">
+                </div>
+
+                <div class="image-label">
+                    <h3>Slide and fold</h3>
+                    <p class="image-description">Classic hinged windows that open outward, providing excellent
+                        ventilation.</p>
+
+                    <div class="price-row">
+                        <p class="product-price"><strong>Price: ₹2000</strong></p>
+                        <button class="add-cart-btn">Add to Cart</button>
+                    </div>
+
+                    <p class="price-note">
+                        <strong>*NOTE*</strong> - THIS IS INDICATIVE PRICE ONLY OF OUR PRODUCTS. ACTUAL AMOUNT VARIES AS
+                        PER CUSTOMER'S REQUIREMENTS. THIS PRICE WILL BE CONSIDERED SITE VISITING CHARGES.
+                    </p>
+                </div>
             </div>
-            <div class="slide-unique">
-                <img src="image/Slide and fold.jpg" alt="Window 3">
-            </div>
-            <div class="slide-unique">
-                <img src="image/3 track sliding door.jpg" alt="Window 4">
-            </div>
-            <div class="slide-unique">
-                <img src="image/Casement Door windows.jpg" alt="Window 5">
-            </div>
-            <div class="slide-unique">
-                <img src="image/Gallery-Size-is-550x550-5.webp" alt="Window 6">
-            </div>
-            <div class="slide-unique">
-                <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Window 7">
-            </div>
-            <div class="slide-unique">
-                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Window 8">
-            </div>
+
         </div>
     </div>
-</section>
-
-<!-- AWARD SECTION -->
-<section id="awardSectionUnique" class="award-section">
-    <div class="award-left">
-        <h3 class="award-subtitle">Recognized Globally for</h3>
-        <h1 class="award-title">Excellence</h1>
-        <p class="award-desc">
-            Apl Prestige has consistently been acknowledged for its outstanding performance over the years. 
-            These recognitions of the company's dedication and accomplishments serve as a powerful source 
-            of motivation that drives the team to continuously strive for excellence.
-        </p>
-
-        <!-- AWARD LIST -->
-        <ul class="award-list">
-            <li class="award-item active" data-img="img1.png">
-                <span class="icon">🔥</span> 
-                Iconic Brands Award of India – 2024 
-                <span class="arrow">›</span>
-            </li>
-            <li class="award-item" data-img="img2.png">
-                <span class="icon">🔥</span> 
-                Best Manufacturing Award – 2024 
-                <span class="arrow">›</span>
-            </li>
-            <li class="award-item" data-img="img3.png">
-                <span class="icon">🔥</span> 
-                Iconic Brands Award of India – 2022 
-                <span class="arrow">›</span>
-            </li>
-            <li class="award-item" data-img="img4.png">
-                <span class="icon">🔥</span> 
-                Best Brand Award – 2021 
-                <span class="arrow">›</span>
-            </li>
-        </ul>
-    </div>
-
-    <div class="award-right">
-        <div class="award-image-box">
-            <img id="awardMainImg" src="image/Frame-1000003554.webp" alt="Award">
-        </div>
-    </div>
-</section>
-
-<!-- BLOGS SECTION -->
-<section class="blogs-section">
-    <h2 class="section-title">Blogs</h2>
-    <div class="blogs-container">
-        <!-- Card 1 -->
-        <div class="blog-card">
-            <div class="blog-img">
-                <img src="image/uPVC vs Aluminium Windows.jpeg" alt="Blog 1">
-            </div>
-            <div class="blog-content">
-                <span class="category">WINDOW</span>
-                <h3 class="blog-title">
-                    uPVC vs Aluminium Windows: Which One Should You Choose?
-                </h3>
-                <a href="#" class="read-more">Read More <span>›</span></a>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="blog-card">
-            <div class="blog-img">
-                <img src="image/Energy Efficient Windows.jpeg" alt="Blog 2">
-            </div>
-            <div class="blog-content">
-                <span class="category">WINDOW</span>
-                <h3 class="blog-title">
-                    Energy Efficient Windows: Types, Benefits and Installation Tips
-                </h3>
-                <a href="#" class="read-more">Read More <span>›</span></a>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="blog-card">
-            <div class="blog-img">
-                <img src="image/Sliding Door Benefits for Modern Homes.webp" alt="Blog 3">
-            </div>
-            <div class="blog-content">
-                <span class="category">DOORS</span>
-                <h3 class="blog-title">
-                    Sliding Door Benefits for Modern Homes
-                </h3>
-                <a href="#" class="read-more">Read More <span>›</span></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="btn-center">
-        <button id="viewAllBtn">View All <span>›</span></button>
-    </div>
-</section>
-
-<!-- CONTENT SECTION -->
-<section class="apl-section">
-    <div class="apl-container">
-        <h2 class="apl-heading">
-            APL Prestige - Best <strong>uPVC Doors & Windows Suppliers in India</strong>
-        </h2>
-        <p class="apl-text">
-            With over 35 years of experience, APL Prestige has become one of the most reliable names in India in
-            precision-engineered UPVC doors, windows and piping solutions. The company designs, manufactures,
-            installs, and services fully customised, uPVC windows and doors. Known as the best 
-            <strong>uPVC doors and Windows manufacturers in India</strong>, we offer high-quality window and door
-            systems for residential and commercial purposes.
-        </p>
-
-        <h2 class="apl-heading">
-            Why Choose APL Prestige as Your <strong>uPVC Doors and Windows Manufacturer?</strong>
-        </h2>
-        <p class="apl-text">
-            At APL Prestige, we combine state-of-the-art innovation with unmatched craftsmanship to deliver UPVC
-            doors and windows, which are not only built to endure but also elevate the aesthetics of your place.
-            Each product reflects our commitment to quality, stability and design excellence from concept to installation.
-        </p>
-
-        <ul class="apl-list">
-            <li>
-                <strong>Driven by In-House Innovation</strong> Our dedicated R&D team is constantly developing 
-                smarter, stronger, and more sustainable solutions, ensuring our products stay ahead in terms of 
-                performance and style.
-            </li>
-            <li>
-                <strong>Top-Notch Manufacturing Excellence</strong> With cutting-edge production facilities and the
-                latest technology, we are known as the best <strong>uPVC windows</strong> and doors 
-                <strong>brand in India</strong> that meets the highest standards of quality and reliability.
-            </li>
-            <li>
-                <strong>Skilled Craftsmanship at Every Step</strong> From consultation to final installation, our
-                team of experienced technicians ensures flawless execution with meticulous attention to detail,
-                offering you peace of mind with every frame.
-            </li>
-            <li>
-                <strong>Certified to Global Standards</strong> APL Prestige is one of the best 
-                <strong>UPVC doors and windows suppliers in India</strong> that meets rigorous European 
-                certifications and international benchmarks, reinforcing our promise of safety, durability, and 
-                excellence you can trust.
-            </li>
-            <li>
-                <strong>Discover UPVC Doors and Windows for Modern Living</strong> APL Prestige presents its premium
-                design collection of uPVC doors and windows, which combine elegance with innovation to transform
-                your living areas. APL Prestige <strong>UPVC windows</strong> and door <strong>manufacturers</strong>
-                offer a wide range of possibilities for your project.
-            </li>
-        </ul>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>APL Prestige</h3>
-            <p>Leading manufacturer of premium uPVC windows and doors in India with over 35 years of excellence.</p>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-        
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#product">Products</a></li>
-                <li><a href="#Space">Spaces</a></li>
-                <li><a href="#">Showcase</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-col">
-            <h3>Products</h3>
-            <ul>
-                <li><a href="#product">Windows</a></li>
-                <li><a href="#product">Doors</a></li>
-                <li><a href="#product">Sliding Systems</a></li>
-                <li><a href="#product">uPVC Pipes</a></li>
-                <li><a href="#product">Accessories</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-col">
-            <h3>Contact Info</h3>
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i> Corporate Office, Delhi, India</li>
-                <li><i class="fas fa-phone"></i>+91 70075 22507</li>
-                <li><i class="fas fa-envelope"></i> prestigewindowalu@gmail.com</li>
-                <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2023 APL Prestige. All Rights Reserved. | Designed for Excellence</p>
-    </div>
-</footer>
 
 <script>
-// ===== IMPROVED MOBILE MENU FUNCTIONALITY =====
-let isMenuOpen = false;
+    document.querySelectorAll('.add-cart-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        // Product ki details nikaalna
+        const productCard = this.closest('.image-item');
+        const name = productCard.querySelector('h3').innerText;
+        // Price se sirf number nikaalna (₹1000 -> 1000)
+        const priceText = productCard.querySelector('.product-price').innerText;
+        const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+        const image = productCard.querySelector('img').src;
 
-function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const overlay = document.getElementById("menuOverlay");
-    const body = document.body;
-    
-    isMenuOpen = !isMenuOpen;
-    
-    if (isMenuOpen) {
-        menu.classList.add("active");
-        overlay.classList.add("active");
-        body.style.overflow = "hidden"; // Prevent scrolling
-        menu.focus();
-    } else {
-        menu.classList.remove("active");
-        overlay.classList.remove("active");
-        body.style.overflow = ""; // Restore scrolling
-        // Close all dropdowns when closing menu
-        closeAllMobileDropdowns();
-    }
-}
+        // Purana cart data lena ya naya array banana
+        let cart = JSON.parse(localStorage.getItem('prestige_cart')) || [];
 
-function toggleMobileDropdown(btn) {
-    const content = btn.nextElementSibling;
-    const isActive = content.classList.contains("active");
-    
-    // Close all other dropdowns
-    closeAllMobileDropdowns();
-    
-    if (!isActive) {
-        btn.classList.add("active");
-        content.classList.add("active");
-    }
-}
+        // Naya item object
+        const newItem = {
+            id: Date.now(),
+            name: name,
+            price: price,
+            image: image
+        };
 
-function closeAllMobileDropdowns() {
-    document.querySelectorAll(".mobile-dropdown-content").forEach(content => {
-        content.classList.remove("active");
+        // Cart mein add karna aur Save karna
+        cart.push(newItem);
+        localStorage.setItem('prestige_cart', JSON.stringify(cart));
+
+        // cart.html page par redirect karna
+        window.location.href = 'cart.html';
     });
-    document.querySelectorAll(".mobile-dropdown-btn").forEach(btn => {
-        btn.classList.remove("active");
-    });
-}
-
-// Close menu when clicking on overlay
-document.getElementById("menuOverlay")?.addEventListener("click", toggleMenu);
-
-// Close menu when pressing Escape key
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isMenuOpen) {
-        toggleMenu();
-    }
 });
+</script>
 
-// Close dropdowns when clicking outside on mobile
-document.addEventListener("click", function(event) {
-    if (window.innerWidth <= 900) {
-        if (!event.target.closest('.mobile-dropdown') && !event.target.closest('.menu-btn')) {
-            closeAllMobileDropdowns();
+    <!-- UNIQUE EVERY SPACE SECTION -->
+    <section class="unique-every-space-section" id="Space">
+        <div class="unique-container">
+            <div class="unique-header">
+                <h2><span>Designed for </span>Every Space</h2>
+                <div class="unique-tabs-switch">
+                    <button class="unique-tab-btn active" data-type="residential">Residential</button>
+                    <button class="unique-tab-btn" data-type="commercial">Commercial</button>
+                </div>
+            </div>
+
+            <div class="unique-content-wrapper">
+                <!-- Left vertical tabs -->
+                <div class="unique-tabs-list" id="uniqueTabsList"></div>
+
+                <!-- Right image preview -->
+                <div class="unique-preview">
+                    <img id="uniquePreviewImg" src="" alt="Space Preview">
+                    <h3 id="uniquePreviewTitle"></h3>
+                    <p id="uniquePreviewSubtitle"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APL FEATURES SECTION -->
+    <section id="apl-features-section">
+        <div class="apl-features-container">
+            <!-- LEFT SIDE -->
+            <div class="apl-left-box">
+                <h3 class="apl-small-title">Prestige Window</h3>
+                <h1 class="apl-main-title">
+                    Features & <br>
+                    Benefits
+                </h1>
+                <p class="apl-description">
+                    Prestige Window's high-performance windows bring a refined architectural appeal to your home.
+                    Designed to block out street noise, dust, pollution, rain, and strong winds, they offer
+                    exceptional protection. These windows are also energy-efficient, durable, and require
+                    minimal maintenance, making them a smart and lasting choice.
+                </p>
+
+                <!-- FEATURES GRID -->
+                <div class="apl-features-grid">
+                    <div class="apl-feature-item">
+                        <img src="image/Weather.png" class="apl-icon" alt="Weather Resistant">
+                        <span>Weather <br> Resistant</span>
+                    </div>
+                    <div class="apl-feature-item">
+                        <img src="image/Maintenance.png" class="apl-icon" alt="Low Maintenance">
+                        <span>Low <br> Maintenance</span>
+                    </div>
+                    <div class="apl-feature-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448577.png" class="apl-icon"
+                            alt="Excellent Insulation">
+                        <span>Excellent <br> insulation</span>
+                    </div>
+                    <div class="apl-feature-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448554.png" class="apl-icon"
+                            alt="Fire Retardant">
+                        <span>Fire <br> Retardant</span>
+                    </div>
+                    <div class="apl-feature-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448591.png" class="apl-icon"
+                            alt="Termite & Corrosion Proof">
+                        <span>Termite & Corrosion <br> Proof</span>
+                    </div>
+                    <div class="apl-feature-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448585.png" class="apl-icon"
+                            alt="Eco-Conscious">
+                        <span>Eco- <br> Conscious</span>
+                    </div>
+                    <div class="apl-feature-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448567.png" class="apl-icon"
+                            alt="Strong & Secure">
+                        <span>Strong & <br> Secure</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="apl-right-box">
+                <img src="image/Casement Door windows.jpg" class="apl-window-img" alt="Prestige Window Window">
+            </div>
+        </div>
+
+        <!-- BACKGROUND SHAPES -->
+        <div class="apl-bg-circle big"></div>
+        <div class="apl-bg-circle small"></div>
+    </section>
+
+    <!-- ENQUIRY SECTION -->
+    <section class="enquiry-section" id="enquiry-section">
+        <!-- LEFT SIDE IMAGE -->
+        <div class="left-image">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Window Design">
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="form-box">
+            <h2>Enquire Now</h2>
+            <form id="enquiryForm">
+                <div class="row">
+                    <input type="text" placeholder="Name*" required>
+                    <input type="tel" placeholder="Phone*" required>
+                </div>
+                <div class="row">
+                    <input type="email" placeholder="Email*" required>
+                </div>
+                <div class="row">
+                    <select required>
+                        <option value="">Select State*</option>
+                        <option>Maharashtra</option>
+                        <option>Delhi</option>
+                        <option>Karnataka</option>
+                        <option>Tamil Nadu</option>
+                    </select>
+                    <select required>
+                        <option value="">Select City*</option>
+                        <option>Mumbai</option>
+                        <option>Pune</option>
+                        <option>Bengaluru</option>
+                        <option>Chennai</option>
+                    </select>
+                </div>
+                <textarea placeholder="Message"></textarea>
+                <label class="check">
+                    <input type="checkbox" required>
+                    I authorize updates via Email/SMS/WhatsApp/Call.
+                </label>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- STATS ROW -->
+    <section class="stats-row">
+        <div class="stat-item">
+            <h2>9</h2>
+            <p>state-of-the-art manufacturing<br>plants located across India</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-item">
+            <h2>2.16 Lacs</h2>
+            <p>MTPA Production capacity</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-item">
+            <h2>1,000+</h2>
+            <p>channel partners ensuring<br>strong pan-India market<br>presence</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-item">
+            <h2>40,000+</h2>
+            <p>customer touchpoints for<br>seamless service and support</p>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-item">
+            <h2>2,600+</h2>
+            <p>SKUs across a wide product<br>range</p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="uniqueGallerySection" class="gallery-section-unique">
+        <h2 id="uniqueGalleryTitle" class="gallery-title-unique">Gallery</h2>
+        <div id="uniqueSliderWrapper" class="slider-wrapper-unique">
+            <div id="uniqueSlider" class="slider-unique">
+                <!-- 8 SLIDES WITH IMAGES -->
+                <div class="slide-unique">
+                    <img src="image/Casement windows.jpg" alt="Window 1">
+                </div>
+                <div class="slide-unique">
+                    <img src="image/Tilt and tern casement .jpg" alt="Window 2">
+                </div>
+                <div class="slide-unique">
+                    <img src="image/Slide and fold.jpg" alt="Window 3">
+                </div>
+                <div class="slide-unique">
+                    <img src="image/3 track sliding door.jpg" alt="Window 4">
+                </div>
+                <div class="slide-unique">
+                    <img src="image/Casement Door windows.jpg" alt="Window 5">
+                </div>
+                <div class="slide-unique">
+                    <img src="image/Gallery-Size-is-550x550-5.webp" alt="Window 6">
+                </div>
+                <div class="slide-unique">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Window 7">
+                </div>
+                <div class="slide-unique">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Window 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWARD SECTION -->
+
+
+    <!-- BLOGS SECTION -->
+    <section class="blogs-section">
+        <h2 class="section-title">Blogs</h2>
+        <div class="blogs-container">
+            <!-- Card 1 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="image/uPVC vs Aluminium Windows.jpeg" alt="Blog 1">
+                </div>
+                <div class="blog-content">
+                    <span class="category">WINDOW</span>
+                    <h3 class="blog-title">
+                        uPVC vs Aluminium Windows: Which One Should You Choose?
+                    </h3>
+                    <a href="#" class="read-more">Read More <span>›</span></a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="image/Energy Efficient Windows.jpeg" alt="Blog 2">
+                </div>
+                <div class="blog-content">
+                    <span class="category">WINDOW</span>
+                    <h3 class="blog-title">
+                        Energy Efficient Windows: Types, Benefits and Installation Tips
+                    </h3>
+                    <a href="#" class="read-more">Read More <span>›</span></a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="image/Sliding Door Benefits for Modern Homes.webp" alt="Blog 3">
+                </div>
+                <div class="blog-content">
+                    <span class="category">DOORS</span>
+                    <h3 class="blog-title">
+                        Sliding Door Benefits for Modern Homes
+                    </h3>
+                    <a href="#" class="read-more">Read More <span>›</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-center">
+            <button id="viewAllBtn">View All <span>›</span></button>
+        </div>
+    </section>
+
+    <!-- CONTENT SECTION -->
+    <section class="apl-section">
+        <div class="apl-container">
+            <h2 class="apl-heading">
+                Prestige Window - Best <strong>uPVC Doors & Windows Suppliers in India</strong>
+            </h2>
+            <p class="apl-text">
+                With over 35 years of experience, Prestige Window has become one of the most reliable names in India in
+                precision-engineered UPVC doors, windows and piping solutions. The company designs, manufactures,
+                installs, and services fully customised, uPVC windows and doors. Known as the best
+                <strong>uPVC doors and Windows manufacturers in India</strong>, we offer high-quality window and door
+                systems for residential and commercial purposes.
+            </p>
+
+            <h2 class="apl-heading">
+                Why Choose Prestige Window as Your <strong>uPVC Doors and Windows Manufacturer?</strong>
+            </h2>
+            <p class="apl-text">
+                At Prestige Window, we combine state-of-the-art innovation with unmatched craftsmanship to deliver UPVC
+                doors and windows, which are not only built to endure but also elevate the aesthetics of your place.
+                Each product reflects our commitment to quality, stability and design excellence from concept to
+                installation.
+            </p>
+
+            <ul class="apl-list">
+                <li>
+                    <strong>Driven by In-House Innovation</strong> Our dedicated R&D team is constantly developing
+                    smarter, stronger, and more sustainable solutions, ensuring our products stay ahead in terms of
+                    performance and style.
+                </li>
+                <li>
+                    <strong>Top-Notch Manufacturing Excellence</strong> With cutting-edge production facilities and the
+                    latest technology, we are known as the best <strong>uPVC windows</strong> and doors
+                    <strong>brand in India</strong> that meets the highest standards of quality and reliability.
+                </li>
+                <li>
+                    <strong>Skilled Craftsmanship at Every Step</strong> From consultation to final installation, our
+                    team of experienced technicians ensures flawless execution with meticulous attention to detail,
+                    offering you peace of mind with every frame.
+                </li>
+                <li>
+                    <strong>Certified to Global Standards</strong> Prestige Window is one of the best
+                    <strong>UPVC doors and windows suppliers in India</strong> that meets rigorous European
+                    certifications and international benchmarks, reinforcing our promise of safety, durability, and
+                    excellence you can trust.
+                </li>
+                <li>
+                    <strong>Discover UPVC Doors and Windows for Modern Living</strong> Prestige Window presents its
+                    premium
+                    design collection of uPVC doors and windows, which combine elegance with innovation to transform
+                    your living areas. Prestige Window <strong>UPVC windows</strong> and door
+                    <strong>manufacturers</strong>
+                    offer a wide range of possibilities for your project.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Prestige Window</h3>
+                <p>Leading manufacturer of premium uPVC windows and doors in India with over 35 years of excellence.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#product">Products</a></li>
+                    <li><a href="#Space">Spaces</a></li>
+                    <li><a href="#">Showcase</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#product">Windows</a></li>
+                    <li><a href="#product">Doors</a></li>
+                    <li><a href="#product">Sliding Systems</a></li>
+                    <li><a href="#product">uPVC Pipes</a></li>
+                    <li><a href="#product">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> BOKTA DIHWA TOLA, SAHAJANWA, SECTOR- 22, GORAKHPUR-273209
+                        (U.P.) </li>
+                    <li><i class="fas fa-phone"></i>+91 70075 22507</li>
+                    <li><i class="fas fa-envelope"></i> prestigewindowalu@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> shreejiplast4@gmail.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Prestige Window. All Rights Reserved. | Designed for Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== IMPROVED MOBILE MENU FUNCTIONALITY =====
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            const overlay = document.getElementById("menuOverlay");
+            const body = document.body;
+
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                menu.classList.add("active");
+                overlay.classList.add("active");
+                body.style.overflow = "hidden"; // Prevent scrolling
+                menu.focus();
+            } else {
+                menu.classList.remove("active");
+                overlay.classList.remove("active");
+                body.style.overflow = ""; // Restore scrolling
+                // Close all dropdowns when closing menu
+                closeAllMobileDropdowns();
+            }
         }
-    }
-});
 
-// ===== HERO SLIDER FUNCTIONALITY =====
-let slides = document.querySelectorAll(".slide");
-let dots = document.querySelectorAll(".dot");
-let index = 0;
+        function toggleMobileDropdown(btn) {
+            const content = btn.nextElementSibling;
+            const isActive = content.classList.contains("active");
 
-function showSlide(i) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active"));
+            // Close all other dropdowns
+            closeAllMobileDropdowns();
 
-  slides[i].classList.add("active");
-  dots[i].classList.add("active");
-}
+            if (!isActive) {
+                btn.classList.add("active");
+                content.classList.add("active");
+            }
+        }
 
-function nextSlide() {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-}
+        function closeAllMobileDropdowns() {
+            document.querySelectorAll(".mobile-dropdown-content").forEach(content => {
+                content.classList.remove("active");
+            });
+            document.querySelectorAll(".mobile-dropdown-btn").forEach(btn => {
+                btn.classList.remove("active");
+            });
+        }
 
-let autoPlay = setInterval(nextSlide, 4000);
+        // Close menu when clicking on overlay
+        document.getElementById("menuOverlay")?.addEventListener("click", toggleMenu);
 
-document.querySelector(".next").onclick = () => {
-  nextSlide();
-  resetAutoPlay();
-};
-
-document.querySelector(".prev").onclick = () => {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
-  resetAutoPlay();
-};
-
-dots.forEach((dot, i) => {
-  dot.onclick = () => {
-    index = i;
-    showSlide(index);
-    resetAutoPlay();
-  };
-});
-
-function resetAutoPlay() {
-  clearInterval(autoPlay);
-  autoPlay = setInterval(nextSlide, 4000);
-}
-
-// ===== SCROLL TO ENQUIRY =====
-function scrollToEnquiry() {
-    document.querySelector('.enquiry-section')?.scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-}
-
-// ===== OPEN WHATSAPP =====
-function openWhatsApp() {
-    const phone = "+917007522507";
-    const message = "Hello APL Prestige, I'm interested in your windows and doors. Can you provide more information?";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-}
-
-// ===== UNIQUE EVERY SPACE TABS =====
-const UNIQUE_DATA = {
-  residential: [
-    { title: "Patio", subtitle: "Expanded living, entertaining.", img: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Study Room", subtitle: "Quiet focus, natural light.", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Bathroom", subtitle: "Privacy, ventilation, serenity.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Balcony", subtitle: "Seamless indoor-outdoor living.", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Kitchen", subtitle: "Fresh air, bright spaces.", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Bedroom", subtitle: "Privacy, tranquility, natural light.", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Living Room", subtitle: "Enhanced appeal, efficiency, security.", img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
-  ],
-  commercial: [
-    { title: "Hospitals", subtitle: "Hygiene, durability, healing.", img: "image/hospitel.webp" },
-    { title: "Hotels", subtitle: "Comfort, views, elegance.", img: "image/hostel.webp" },
-    { title: "Offices", subtitle: "Productivity, inspiring workspaces.", img: "image/office.webp" }
-  ]
-};
-
-const uniqueTabsList = document.getElementById("uniqueTabsList");
-const uniquePreviewImg = document.getElementById("uniquePreviewImg");
-const uniquePreviewTitle = document.getElementById("uniquePreviewTitle");
-const uniquePreviewSubtitle = document.getElementById("uniquePreviewSubtitle");
-
-if (uniqueTabsList && uniquePreviewImg) {
-    function loadUniqueTabs(type) {
-      uniqueTabsList.innerHTML = "";
-      UNIQUE_DATA[type].forEach((item, index) => {
-        const tab = document.createElement("div");
-        tab.className = "unique-tab-item" + (index === 0 ? " active" : "");
-        tab.textContent = item.title;
-        tab.onclick = () => selectUniqueItem(index, type);
-        uniqueTabsList.appendChild(tab);
-
-        if(index === 0) updateUniquePreview(item);
-      });
-    }
-
-    function selectUniqueItem(index, type) {
-      document.querySelectorAll(".unique-tab-item").forEach(t => t.classList.remove("active"));
-      uniqueTabsList.children[index].classList.add("active");
-      updateUniquePreview(UNIQUE_DATA[type][index]);
-    }
-
-    function updateUniquePreview(item) {
-      uniquePreviewImg.src = item.img;
-      uniquePreviewTitle.textContent = item.title;
-      uniquePreviewSubtitle.textContent = item.subtitle;
-    }
-
-    document.querySelectorAll(".unique-tab-btn").forEach(btn => {
-      btn.onclick = () => {
-        document.querySelectorAll(".unique-tab-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        loadUniqueTabs(btn.dataset.type);
-      };
-    });
-
-    loadUniqueTabs("residential");
-}
-
-// ===== FORM SUBMISSION =====
-document.getElementById("enquiryForm")?.addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Thank you for your enquiry! We will contact you soon.");
-    this.reset();
-});
-
-// ===== COLOR SELECTION FUNCTIONALITY =====
-document.querySelectorAll('.color-option').forEach(option => {
-    option.addEventListener('click', function() {
-        const parentCard = this.closest('.product-card');
-        parentCard.querySelectorAll('.color-option').forEach(item => {
-            item.classList.remove('active');
-        });
-        this.classList.add('active');
-    });
-});
-
-// ===== PRODUCT BUTTONS =====
-document.querySelector('.explore-window-btn')?.addEventListener('click', () => {
-    document.querySelector('#product')?.scrollIntoView({ behavior: 'smooth' });
-});
-
-document.querySelector('.explore-door-btn')?.addEventListener('click', () => {
-    document.querySelector('#product')?.scrollIntoView({ behavior: 'smooth' });
-});
-
-// ===== DEMO BUTTON =====
-document.querySelector('.demo-button')?.addEventListener('click', function() {
-    const imageItems = document.querySelectorAll('.image-item');
-    imageItems.forEach(item => {
-        item.classList.add('highlight-demo');
-        setTimeout(() => item.classList.remove('highlight-demo'), 1000);
-    });
-    alert("Hover effect demonstration activated! Hover over the window images to see the effect.");
-});
-
-// ===== AWARD SECTION FUNCTIONALITY =====
-const awardItems = document.querySelectorAll(".award-item");
-const awardMainImg = document.getElementById("awardMainImg");
-
-if (awardItems.length > 0 && awardMainImg) {
-    const awardImages = [
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    ];
-    
-    awardItems.forEach((item, index) => {
-        item.addEventListener("click", () => {
-            awardItems.forEach(i => i.classList.remove("active"));
-            item.classList.add("active");
-            awardMainImg.src = awardImages[index];
-        });
-    });
-}
-
-// ===== GALLERY SLIDER =====
-let uniqueSlider = document.getElementById("uniqueSlider");
-if (uniqueSlider) {
-    let uniqueIndex = 0;
-    const uniqueSlides = document.querySelectorAll(".slide-unique");
-    
-    function autoSlideUnique() {
-        uniqueIndex++;
-
-        if (uniqueIndex >= uniqueSlides.length) uniqueIndex = 0;
-
-        let movePercent = uniqueIndex * (100 / 3);
-
-        if (window.innerWidth <= 992) movePercent = uniqueIndex * 50;
-        if (window.innerWidth <= 600) movePercent = uniqueIndex * 100;
-
-        uniqueSlider.style.transform = `translateX(-${movePercent}%)`;
-    }
-
-    setInterval(autoSlideUnique, 6000);
-}
-
-// ===== STATS COUNTER ANIMATION =====
-const counters = document.querySelectorAll(".stat-item h2");
-if (counters.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                let text = el.innerText.replace(/[,Lacs+]/g, "");
-                let value = parseInt(text);
-                if (isNaN(value)) return;
-
-                let count = 0;
-                let speed = value / 60;
-
-                function update() {
-                    if (count < value) {
-                        count += speed;
-                        el.innerText = Math.ceil(count).toLocaleString();
-                        requestAnimationFrame(update);
-                    } else {
-                        el.innerText = value.toLocaleString();
-                    }
-                }
-
-                update();
-                observer.unobserve(el);
+        // Close menu when pressing Escape key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && isMenuOpen) {
+                toggleMenu();
             }
         });
-    }, { threshold: 0.5 });
 
-    counters.forEach(counter => observer.observe(counter));
-}
+        // Close dropdowns when clicking outside on mobile
+        document.addEventListener("click", function (event) {
+            if (window.innerWidth <= 900) {
+                if (!event.target.closest('.mobile-dropdown') && !event.target.closest('.menu-btn')) {
+                    closeAllMobileDropdowns();
+                }
+            }
+        });
 
-// ===== VIEW ALL BLOGS BUTTON =====
-document.getElementById("viewAllBtn")?.addEventListener("click", () => {
-    alert("Redirecting to all blogs page!");
-});
+        // ===== HERO SLIDER FUNCTIONALITY =====
+        let slides = document.querySelectorAll(".slide");
+        let dots = document.querySelectorAll(".dot");
+        let index = 0;
 
-// ===== FLOATING GET QUOTE BUTTON =====
-document.querySelector('.get-quote')?.addEventListener('click', scrollToEnquiry);
+        function showSlide(i) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            dots.forEach(dot => dot.classList.remove("active"));
 
-// ===== HANDLE WINDOW RESIZE =====
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 900 && isMenuOpen) {
-            toggleMenu(); // Close mobile menu on desktop resize
+            slides[i].classList.add("active");
+            dots[i].classList.add("active");
         }
-    }, 250);
-});
 
-// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }
+
+        let autoPlay = setInterval(nextSlide, 4000);
+
+        document.querySelector(".next").onclick = () => {
+            nextSlide();
+            resetAutoPlay();
+        };
+
+        document.querySelector(".prev").onclick = () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+            resetAutoPlay();
+        };
+
+        dots.forEach((dot, i) => {
+            dot.onclick = () => {
+                index = i;
+                showSlide(index);
+                resetAutoPlay();
+            };
+        });
+
+        function resetAutoPlay() {
+            clearInterval(autoPlay);
+            autoPlay = setInterval(nextSlide, 4000);
+        }
+
+        // ===== SCROLL TO ENQUIRY =====
+        function scrollToEnquiry() {
+            document.querySelector('.enquiry-section')?.scrollIntoView({
                 behavior: 'smooth'
             });
         }
-    });
-});
 
-// ===== ADDITIONAL STYLES FOR DEMO EFFECT =====
-const style = document.createElement('style');
-style.textContent = `
+        // ===== OPEN WHATSAPP =====
+        function openWhatsApp() {
+            const phone = "+917007522507";
+            const message = "Hello Prestige Window, I'm interested in your windows and doors. Can you provide more information?";
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // ===== UNIQUE EVERY SPACE TABS =====
+        const UNIQUE_DATA = {
+            residential: [
+                { title: "Patio", subtitle: "Expanded living, entertaining.", img: "image/patio.webp" },
+                { title: "Study Room", subtitle: "Quiet focus, natural light.", img: "image/studyroom.png" },
+                { title: "Bathroom", subtitle: "Privacy, ventilation, serenity.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                { title: "Balcony", subtitle: "Seamless indoor-outdoor living.", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                { title: "Kitchen", subtitle: "Fresh air, bright spaces.", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                { title: "Bedroom", subtitle: "Privacy, tranquility, natural light.", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                { title: "Living Room", subtitle: "Enhanced appeal, efficiency, security.", img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+            ],
+            commercial: [
+                { title: "Hospitals", subtitle: "Hygiene, durability, healing.", img: "image/hospitel.webp" },
+                { title: "Hotels", subtitle: "Comfort, views, elegance.", img: "image/hostel.webp" },
+                { title: "Offices", subtitle: "Productivity, inspiring workspaces.", img: "image/office.webp" }
+            ]
+        };
+
+        const uniqueTabsList = document.getElementById("uniqueTabsList");
+        const uniquePreviewImg = document.getElementById("uniquePreviewImg");
+        const uniquePreviewTitle = document.getElementById("uniquePreviewTitle");
+        const uniquePreviewSubtitle = document.getElementById("uniquePreviewSubtitle");
+
+        if (uniqueTabsList && uniquePreviewImg) {
+            function loadUniqueTabs(type) {
+                uniqueTabsList.innerHTML = "";
+                UNIQUE_DATA[type].forEach((item, index) => {
+                    const tab = document.createElement("div");
+                    tab.className = "unique-tab-item" + (index === 0 ? " active" : "");
+                    tab.textContent = item.title;
+                    tab.onclick = () => selectUniqueItem(index, type);
+                    uniqueTabsList.appendChild(tab);
+
+                    if (index === 0) updateUniquePreview(item);
+                });
+            }
+
+            function selectUniqueItem(index, type) {
+                document.querySelectorAll(".unique-tab-item").forEach(t => t.classList.remove("active"));
+                uniqueTabsList.children[index].classList.add("active");
+                updateUniquePreview(UNIQUE_DATA[type][index]);
+            }
+
+            function updateUniquePreview(item) {
+                uniquePreviewImg.src = item.img;
+                uniquePreviewTitle.textContent = item.title;
+                uniquePreviewSubtitle.textContent = item.subtitle;
+            }
+
+            document.querySelectorAll(".unique-tab-btn").forEach(btn => {
+                btn.onclick = () => {
+                    document.querySelectorAll(".unique-tab-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    loadUniqueTabs(btn.dataset.type);
+                };
+            });
+
+            loadUniqueTabs("residential");
+        }
+
+        // ===== FORM SUBMISSION =====
+        document.getElementById("enquiryForm")?.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Thank you for your enquiry! We will contact you soon.");
+            this.reset();
+        });
+
+        // ===== COLOR SELECTION FUNCTIONALITY =====
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function () {
+                const parentCard = this.closest('.product-card');
+                parentCard.querySelectorAll('.color-option').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // ===== PRODUCT BUTTONS =====
+        document.querySelector('.explore-window-btn')?.addEventListener('click', () => {
+            document.querySelector('#product')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelector('.explore-door-btn')?.addEventListener('click', () => {
+            document.querySelector('#product')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // ===== DEMO BUTTON =====
+        document.querySelector('.demo-button')?.addEventListener('click', function () {
+            const imageItems = document.querySelectorAll('.image-item');
+            imageItems.forEach(item => {
+                item.classList.add('highlight-demo');
+                setTimeout(() => item.classList.remove('highlight-demo'), 1000);
+            });
+            alert("Hover effect demonstration activated! Hover over the window images to see the effect.");
+        });
+
+        // ===== AWARD SECTION FUNCTIONALITY =====
+        const awardItems = document.querySelectorAll(".award-item");
+        const awardMainImg = document.getElementById("awardMainImg");
+
+        if (awardItems.length > 0 && awardMainImg) {
+            const awardImages = [
+                "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            ];
+
+            awardItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    awardItems.forEach(i => i.classList.remove("active"));
+                    item.classList.add("active");
+                    awardMainImg.src = awardImages[index];
+                });
+            });
+        }
+
+        // ===== GALLERY SLIDER =====
+        let uniqueSlider = document.getElementById("uniqueSlider");
+        if (uniqueSlider) {
+            let uniqueIndex = 0;
+            const uniqueSlides = document.querySelectorAll(".slide-unique");
+
+            function autoSlideUnique() {
+                uniqueIndex++;
+
+                if (uniqueIndex >= uniqueSlides.length) uniqueIndex = 0;
+
+                let movePercent = uniqueIndex * (100 / 3);
+
+                if (window.innerWidth <= 992) movePercent = uniqueIndex * 50;
+                if (window.innerWidth <= 600) movePercent = uniqueIndex * 100;
+
+                uniqueSlider.style.transform = `translateX(-${movePercent}%)`;
+            }
+
+            setInterval(autoSlideUnique, 6000);
+        }
+
+        // ===== STATS COUNTER ANIMATION =====
+        const counters = document.querySelectorAll(".stat-item h2");
+        if (counters.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        let text = el.innerText.replace(/[,Lacs+]/g, "");
+                        let value = parseInt(text);
+                        if (isNaN(value)) return;
+
+                        let count = 0;
+                        let speed = value / 60;
+
+                        function update() {
+                            if (count < value) {
+                                count += speed;
+                                el.innerText = Math.ceil(count).toLocaleString();
+                                requestAnimationFrame(update);
+                            } else {
+                                el.innerText = value.toLocaleString();
+                            }
+                        }
+
+                        update();
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // ===== VIEW ALL BLOGS BUTTON =====
+        document.getElementById("viewAllBtn")?.addEventListener("click", () => {
+            alert("Redirecting to all blogs page!");
+        });
+
+        // ===== FLOATING GET QUOTE BUTTON =====
+        document.querySelector('.get-quote')?.addEventListener('click', scrollToEnquiry);
+
+        // ===== HANDLE WINDOW RESIZE =====
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 900 && isMenuOpen) {
+                    toggleMenu(); // Close mobile menu on desktop resize
+                }
+            }, 250);
+        });
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== ADDITIONAL STYLES FOR DEMO EFFECT =====
+        const style = document.createElement('style');
+        style.textContent = `
     .highlight-demo .window-img {
         filter: grayscale(0%) !important;
         transform: scale(1.05) !important;
@@ -1097,25 +1173,26 @@ style.textContent = `
         border-color: #51cf66;
     }
 `;
-document.head.appendChild(style);
+        document.head.appendChild(style);
 
-// ===== LAZY LOADING FOR IMAGES =====
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-</script>
+        // ===== LAZY LOADING FOR IMAGES =====
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 
 </body>
+
 </html>

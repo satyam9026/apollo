@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Window Windows - Responsive Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        /* Policy Specific Styles to match your theme */
+        :root {
+            --primary-teal: #03a9b9;
+            --dark-teal: #02808c;
+            --orange: #e67e22;
+            --text-gray: #555;
+            --light-bg: #f9f9f9;
+        }
+
+        .policy-header {
+            background: linear-gradient(rgba(3, 169, 185, 0.9), rgba(3, 169, 185, 0.9)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 80px;
+            /* Offset for fixed header */
+        }
+
+        .policy-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        .policy-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .policy-content h2 {
+            color: var(--primary-teal);
+            margin-top: 30px;
+            border-left: 4px solid var(--orange);
+            padding-left: 15px;
+            font-size: 1.5rem;
+        }
+
+        .policy-content p,
+        .policy-content ul {
+            margin-bottom: 20px;
+        }
+
+        .policy-content ul {
+            padding-left: 20px;
+        }
+
+        .policy-content ul li {
+            margin-bottom: 10px;
+            list-style-type: square;
+        }
+
+        .highlight-box {
+            background: #fff3e6;
+            border: 1px dashed var(--orange);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary-teal);
+            margin-right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .policy-header {
+                padding: 50px 20px;
+            }
+
+            .policy-content {
+                padding: 20px;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <!-- HEADER SECTION -->
+        <div class="header-container">
+            <div class="top-section">
+                <div class="logos-container">
+                    <div class="left-box">
+                        <a href="index.html">
+                            <img style="width: 150px;height: 200px;" src="image/logo.png" alt="Prestige Window Logo">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="center-teal" id="centerTealBar">
+                    <a href="brochure.pdf" class="ct-item" download>📄 <span>Download Brochure</span></a>
+                    <a href="Blog.html" class="ct-item">📝 <span>Blog</span></a>
+                    <a href="tel:+917007522507" class="ct-item">📞 <span>+91 70075 22507</span></a>
+                    <a href="tel:+917007522507" class="ct-item">GSTIN- <span>09AXLPR7719R1Z7</span></a>
+                    <a href="cart.html" class="ct-item"><span>Add To Cart</span></a>
+
+                </div>
+
+                <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            </div>
+
+            <!-- DESKTOP NAV -->
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+
+                <div class="nav-dropdown">
+                    <a href="#">About</a>
+                    <div class="nav-dropdown-content">
+                        <a href="CompanyOverview.html">Company Overview</a>
+                        <a href="VisionMission.html">Vision & Mission</a>
+                        <a href="Milestones.html">Milestones</a>
+                        <a href="BoardofDirectors.html">Board of Directors</a>
+                        <a href="MD's Desk.html">MD's Desk</a>
+                    </div>
+                </div>
+
+                <a href="#product">Products</a>
+
+                <!-- ✅ ADVANTAGES LINK ADDED -->
+                <a href="advantages.html">Advantages</a>
+
+                <a href="#Space">Spaces</a>
+
+                <div class="nav-dropdown">
+                    <a href="#">Showcase</a>
+                    <div class="nav-dropdown-content">
+                        <a href="#uniqueGallerySection">Gallery</a>
+                    </div>
+                </div>
+                <a href="refund-policy.html">Refund policy</a>
+                <a href="PrivacyPolicy.html">Privacy Policy</a>
+                <a href="TermsAndConditions.html">Terms and conditions </a>
+
+                <a href="ContactUs.html">Contact Us</a>
+            </nav>
+        </div>
+
+        <!-- MOBILE NAV -->
+        <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+        <nav class="mobile-nav" id="mobileMenu">
+            <button class="mobile-close-btn" onclick="toggleMenu()">×</button>
+
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+
+            <!-- ✅ ADVANTAGES LINK ADDED -->
+            <a href="advantages.html" onclick="toggleMenu()">Advantages</a>
+
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                    About <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="CompanyOverview.html" onclick="toggleMenu()">Company Overview</a>
+                    <a href="VisionMission.html" onclick="toggleMenu()">Vision & Mission</a>
+                    <a href="Milestones.html" onclick="toggleMenu()">Milestones</a>
+                    <a href="BoardofDirectors.html" onclick="toggleMenu()">Board of Directors</a>
+                    <a href="MD's Desk.html" onclick="toggleMenu()">MD's Desk</a>
+                </div>
+            </div>
+
+            <a href="#product" onclick="toggleMenu()">Products</a>
+            <a href="#Space" onclick="toggleMenu()">Spaces</a>
+
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
+                    Showcase <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="#uniqueGallerySection" onclick="toggleMenu()">Gallery</a>
+                </div>
+            </div>
+            <a href="refund-policy.html" onclick="toggleMenu()">Refund policy</a>
+            <a href="refund-policy.html" onclick="toggleMenu()">Refund policy</a>
+            <a href="TermsAndConditions.html" onclick="toggleMenu()">Terms and conditions</a>
+
+            <a href="ContactUs.html" onclick="toggleMenu()">Contact Us</a>
+        </nav>
+
+
+        <section class="policy-header">
+            <h1>Returns & Refund Policy</h1>
+            <p>Transparent policies for a worry-free experience</p>
+        </section>
+
+        <main class="policy-container">
+            <div class="policy-content">
+                <p>At <strong>Prestige Window</strong>, we take pride in our precision-engineered products. Since most
+                    of our windows and doors are customized to your specific architectural measurements, our refund
+                    policy is designed to reflect the bespoke nature of our work.</p>
+
+                <h2>1. Order Cancellation</h2>
+                <p>Orders can only be cancelled within <strong>24 hours</strong> of the advance payment. Once the
+                    material procurement or manufacturing process starts based on your site measurements, cancellations
+                    are not permitted.</p>
+
+                <h2>2. Customized Products</h2>
+                <p>Please note that custom-made products (uPVC Windows, Doors, and Sliding Systems) are
+                    <strong>non-refundable</strong> and <strong>non-returnable</strong> once manufactured correctly
+                    according to the signed measurement sheet.</p>
+
+                <div class="highlight-box">
+                    <strong>Note:</strong> As mentioned in our catalog, actual amounts vary as per requirements. Site
+                    visiting charges (₹100 - ₹500 as applicable) are non-refundable but will be adjusted in the final
+                    invoice upon order placement.
+                </div>
+
+                <h2>3. Damaged or Defective Items</h2>
+                <p>If you receive a product that is damaged during transit or has a manufacturing defect:</p>
+                <ul>
+                    <li>Inform our installation team immediately at the time of delivery.</li>
+                    <li>Send photos of the defect to <strong>prestigewindowalu@gmail.com</strong> within 48 hours.</li>
+                    <li>We will replace the defective part or the entire unit at no additional cost after verification.
+                    </li>
+                </ul>
+
+                <h2>4. Refund Process</h2>
+                <p>In rare cases where a refund is approved (e.g., overpayment or service unavailability):</p>
+                <ul>
+                    <li>Refunds will be processed to the original payment method.</li>
+                    <li>It may take <strong>7-10 working days</strong> for the amount to reflect in your account.</li>
+                </ul>
+
+                <h2>5. Installation Issues</h2>
+                <p>If there is an issue with the installation, our "After-Sales Support" team will visit your site to
+                    rectify it. Refunds are not provided for minor installation adjustments.</p>
+
+                <div class="contact-card">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <strong>Need Help?</strong><br>
+                        For any queries regarding refunds, contact us at +91 70075 22507 or email
+                        shreejiplast4@gmail.com.
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Prestige Window</h3>
+                    <p>Leading manufacturer of premium uPVC windows and doors in India with over 35 years of excellence.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#product">Products</a></li>
+                        <li><a href="#Space">Spaces</a></li>
+                        <li><a href="#">Showcase</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#product">Windows</a></li>
+                        <li><a href="#product">Doors</a></li>
+                        <li><a href="#product">Sliding Systems</a></li>
+                        <li><a href="#product">uPVC Pipes</a></li>
+                        <li><a href="#product">Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> BOKTA DIHWA TOLA, SAHAJANWA, SECTOR- 22,
+                            GORAKHPUR-273209 (U.P.) </li>
+                        <li><i class="fas fa-phone"></i>+91 70075 22507</li>
+                        <li><i class="fas fa-envelope"></i> prestigewindowalu@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> shreejiplast4@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Prestige Window. All Rights Reserved. | Designed for Excellence</p>
+            </div>
+        </footer>
+
+        <script>
+            // ===== IMPROVED MOBILE MENU FUNCTIONALITY =====
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                const menu = document.getElementById("mobileMenu");
+                const overlay = document.getElementById("menuOverlay");
+                const body = document.body;
+
+                isMenuOpen = !isMenuOpen;
+
+                if (isMenuOpen) {
+                    menu.classList.add("active");
+                    overlay.classList.add("active");
+                    body.style.overflow = "hidden"; // Prevent scrolling
+                    menu.focus();
+                } else {
+                    menu.classList.remove("active");
+                    overlay.classList.remove("active");
+                    body.style.overflow = ""; // Restore scrolling
+                    // Close all dropdowns when closing menu
+                    closeAllMobileDropdowns();
+                }
+            }
+
+            function toggleMobileDropdown(btn) {
+                const content = btn.nextElementSibling;
+                const isActive = content.classList.contains("active");
+
+                // Close all other dropdowns
+                closeAllMobileDropdowns();
+
+                if (!isActive) {
+                    btn.classList.add("active");
+                    content.classList.add("active");
+                }
+            }
+
+            function closeAllMobileDropdowns() {
+                document.querySelectorAll(".mobile-dropdown-content").forEach(content => {
+                    content.classList.remove("active");
+                });
+                document.querySelectorAll(".mobile-dropdown-btn").forEach(btn => {
+                    btn.classList.remove("active");
+                });
+            }
+
+            // Close menu when clicking on overlay
+            document.getElementById("menuOverlay")?.addEventListener("click", toggleMenu);
+
+            // Close menu when pressing Escape key
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Close dropdowns when clicking outside on mobile
+            document.addEventListener("click", function (event) {
+                if (window.innerWidth <= 900) {
+                    if (!event.target.closest('.mobile-dropdown') && !event.target.closest('.menu-btn')) {
+                        closeAllMobileDropdowns();
+                    }
+                }
+            });
+
+            // ===== HERO SLIDER FUNCTIONALITY =====
+            let slides = document.querySelectorAll(".slide");
+            let dots = document.querySelectorAll(".dot");
+            let index = 0;
+
+            function showSlide(i) {
+                slides.forEach(slide => slide.classList.remove("active"));
+                dots.forEach(dot => dot.classList.remove("active"));
+
+                slides[i].classList.add("active");
+                dots[i].classList.add("active");
+            }
+
+            function nextSlide() {
+                index = (index + 1) % slides.length;
+                showSlide(index);
+            }
+
+            let autoPlay = setInterval(nextSlide, 4000);
+
+            document.querySelector(".next").onclick = () => {
+                nextSlide();
+                resetAutoPlay();
+            };
+
+            document.querySelector(".prev").onclick = () => {
+                index = (index - 1 + slides.length) % slides.length;
+                showSlide(index);
+                resetAutoPlay();
+            };
+
+            dots.forEach((dot, i) => {
+                dot.onclick = () => {
+                    index = i;
+                    showSlide(index);
+                    resetAutoPlay();
+                };
+            });
+
+            function resetAutoPlay() {
+                clearInterval(autoPlay);
+                autoPlay = setInterval(nextSlide, 4000);
+            }
+
+            // ===== SCROLL TO ENQUIRY =====
+            function scrollToEnquiry() {
+                document.querySelector('.enquiry-section')?.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+
+            // ===== OPEN WHATSAPP =====
+            function openWhatsApp() {
+                const phone = "+917007522507";
+                const message = "Hello Prestige Window, I'm interested in your windows and doors. Can you provide more information?";
+                const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }
+
+            // ===== UNIQUE EVERY SPACE TABS =====
+            const UNIQUE_DATA = {
+                residential: [
+                    { title: "Patio", subtitle: "Expanded living, entertaining.", img: "image/patio.webp" },
+                    { title: "Study Room", subtitle: "Quiet focus, natural light.", img: "image/studyroom.png" },
+                    { title: "Bathroom", subtitle: "Privacy, ventilation, serenity.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                    { title: "Balcony", subtitle: "Seamless indoor-outdoor living.", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                    { title: "Kitchen", subtitle: "Fresh air, bright spaces.", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                    { title: "Bedroom", subtitle: "Privacy, tranquility, natural light.", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                    { title: "Living Room", subtitle: "Enhanced appeal, efficiency, security.", img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+                ],
+                commercial: [
+                    { title: "Hospitals", subtitle: "Hygiene, durability, healing.", img: "image/hospitel.webp" },
+                    { title: "Hotels", subtitle: "Comfort, views, elegance.", img: "image/hostel.webp" },
+                    { title: "Offices", subtitle: "Productivity, inspiring workspaces.", img: "image/office.webp" }
+                ]
+            };
+
+            const uniqueTabsList = document.getElementById("uniqueTabsList");
+            const uniquePreviewImg = document.getElementById("uniquePreviewImg");
+            const uniquePreviewTitle = document.getElementById("uniquePreviewTitle");
+            const uniquePreviewSubtitle = document.getElementById("uniquePreviewSubtitle");
+
+            if (uniqueTabsList && uniquePreviewImg) {
+                function loadUniqueTabs(type) {
+                    uniqueTabsList.innerHTML = "";
+                    UNIQUE_DATA[type].forEach((item, index) => {
+                        const tab = document.createElement("div");
+                        tab.className = "unique-tab-item" + (index === 0 ? " active" : "");
+                        tab.textContent = item.title;
+                        tab.onclick = () => selectUniqueItem(index, type);
+                        uniqueTabsList.appendChild(tab);
+
+                        if (index === 0) updateUniquePreview(item);
+                    });
+                }
+
+                function selectUniqueItem(index, type) {
+                    document.querySelectorAll(".unique-tab-item").forEach(t => t.classList.remove("active"));
+                    uniqueTabsList.children[index].classList.add("active");
+                    updateUniquePreview(UNIQUE_DATA[type][index]);
+                }
+
+                function updateUniquePreview(item) {
+                    uniquePreviewImg.src = item.img;
+                    uniquePreviewTitle.textContent = item.title;
+                    uniquePreviewSubtitle.textContent = item.subtitle;
+                }
+
+                document.querySelectorAll(".unique-tab-btn").forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll(".unique-tab-btn").forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+                        loadUniqueTabs(btn.dataset.type);
+                    };
+                });
+
+                loadUniqueTabs("residential");
+            }
+
+            // ===== FORM SUBMISSION =====
+            document.getElementById("enquiryForm")?.addEventListener("submit", function (e) {
+                e.preventDefault();
+                alert("Thank you for your enquiry! We will contact you soon.");
+                this.reset();
+            });
+
+            // ===== COLOR SELECTION FUNCTIONALITY =====
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.addEventListener('click', function () {
+                    const parentCard = this.closest('.product-card');
+                    parentCard.querySelectorAll('.color-option').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // ===== PRODUCT BUTTONS =====
+            document.querySelector('.explore-window-btn')?.addEventListener('click', () => {
+                document.querySelector('#product')?.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.querySelector('.explore-door-btn')?.addEventListener('click', () => {
+                document.querySelector('#product')?.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // ===== DEMO BUTTON =====
+            document.querySelector('.demo-button')?.addEventListener('click', function () {
+                const imageItems = document.querySelectorAll('.image-item');
+                imageItems.forEach(item => {
+                    item.classList.add('highlight-demo');
+                    setTimeout(() => item.classList.remove('highlight-demo'), 1000);
+                });
+                alert("Hover effect demonstration activated! Hover over the window images to see the effect.");
+            });
+
+            // ===== AWARD SECTION FUNCTIONALITY =====
+            const awardItems = document.querySelectorAll(".award-item");
+            const awardMainImg = document.getElementById("awardMainImg");
+
+            if (awardItems.length > 0 && awardMainImg) {
+                const awardImages = [
+                    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ];
+
+                awardItems.forEach((item, index) => {
+                    item.addEventListener("click", () => {
+                        awardItems.forEach(i => i.classList.remove("active"));
+                        item.classList.add("active");
+                        awardMainImg.src = awardImages[index];
+                    });
+                });
+            }
+
+            // ===== GALLERY SLIDER =====
+            let uniqueSlider = document.getElementById("uniqueSlider");
+            if (uniqueSlider) {
+                let uniqueIndex = 0;
+                const uniqueSlides = document.querySelectorAll(".slide-unique");
+
+                function autoSlideUnique() {
+                    uniqueIndex++;
+
+                    if (uniqueIndex >= uniqueSlides.length) uniqueIndex = 0;
+
+                    let movePercent = uniqueIndex * (100 / 3);
+
+                    if (window.innerWidth <= 992) movePercent = uniqueIndex * 50;
+                    if (window.innerWidth <= 600) movePercent = uniqueIndex * 100;
+
+                    uniqueSlider.style.transform = `translateX(-${movePercent}%)`;
+                }
+
+                setInterval(autoSlideUnique, 6000);
+            }
+
+            // ===== STATS COUNTER ANIMATION =====
+            const counters = document.querySelectorAll(".stat-item h2");
+            if (counters.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            let text = el.innerText.replace(/[,Lacs+]/g, "");
+                            let value = parseInt(text);
+                            if (isNaN(value)) return;
+
+                            let count = 0;
+                            let speed = value / 60;
+
+                            function update() {
+                                if (count < value) {
+                                    count += speed;
+                                    el.innerText = Math.ceil(count).toLocaleString();
+                                    requestAnimationFrame(update);
+                                } else {
+                                    el.innerText = value.toLocaleString();
+                                }
+                            }
+
+                            update();
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                counters.forEach(counter => observer.observe(counter));
+            }
+
+            // ===== VIEW ALL BLOGS BUTTON =====
+            document.getElementById("viewAllBtn")?.addEventListener("click", () => {
+                alert("Redirecting to all blogs page!");
+            });
+
+            // ===== FLOATING GET QUOTE BUTTON =====
+            document.querySelector('.get-quote')?.addEventListener('click', scrollToEnquiry);
+
+            // ===== HANDLE WINDOW RESIZE =====
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    if (window.innerWidth > 900 && isMenuOpen) {
+                        toggleMenu(); // Close mobile menu on desktop resize
+                    }
+                }, 250);
+            });
+
+            // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ===== ADDITIONAL STYLES FOR DEMO EFFECT =====
+            const style = document.createElement('style');
+            style.textContent = `
+    .highlight-demo .window-img {
+        filter: grayscale(0%) !important;
+        transform: scale(1.05) !important;
+        box-shadow: inset 0 0 0 1000px rgba(52, 152, 219, 0.3) !important;
+        transition: all 0.5s ease !important;
+    }
+    
+    /* Improve touch experience on mobile */
+    @media (max-width: 768px) {
+        .image-item {
+            cursor: pointer;
+        }
+        
+        .image-item:active .window-img {
+            filter: grayscale(0%) !important;
+            transform: scale(1.03) !important;
+        }
+    }
+    
+    /* Smooth transitions for dropdowns */
+    .nav-dropdown-content {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Better focus states for accessibility */
+    button:focus, a:focus, input:focus, select:focus, textarea:focus {
+        outline: 2px solid #03a9b9;
+        outline-offset: 2px;
+    }
+    
+    /* Improve form validation */
+    input:invalid, select:invalid, textarea:invalid {
+        border-color: #ff6b6b;
+    }
+    
+    input:valid, select:valid, textarea:valid {
+        border-color: #51cf66;
+    }
+`;
+            document.head.appendChild(style);
+
+            // ===== LAZY LOADING FOR IMAGES =====
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        </script>
+
+    </body>
+
+</html>

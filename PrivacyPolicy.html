@@ -4,431 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prestige Window Windows - Responsive Website</title>
+    <title>Privacy Policy - Prestige Window</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ===== HERO SECTION ===== */
-        #blogs-hero-section {
-            position: relative;
-            width: 100%;
-            min-height: 70vh;
-            background: url("image/about_banner-1.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
+        /* Privacy Policy Specific Styles */
+        .policy-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.8;
         }
 
-        /* ===== CONTAINER ===== */
-        .blogs-hero-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            flex-wrap: wrap;
+        .policy-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #03a9b9;
+            /* Teal color from your theme */
         }
 
-        /* ===== LEFT CONTENT ===== */
-        .blogs-hero-left {
-            max-width: 520px;
-            z-index: 2;
-            flex: 1 1 100%;
-        }
-
-        .blogs-breadcrumb {
-            font-size: 14px;
-            color: #777777;
-            margin-bottom: 20px;
-        }
-
-        .blogs-breadcrumb span {
-            color: #f36c00;
-            font-weight: 600;
-        }
-
-        .blogs-hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            color: #f36c00;
-            line-height: 1.2;
-        }
-
-        /* ===== RIGHT CONTENT ===== */
-        .blogs-hero-right {
-            position: relative;
-            width: 45%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1 1 100%;
-            margin-top: 20px;
-        }
-
-        .blogs-door-image {
-            max-width: 260px;
-            width: 100%;
-            z-index: 2;
-        }
-
-        .blogs-made-text {
-            position: absolute;
-            left: -40px;
-            top: 40%;
-            font-size: 56px;
-            font-weight: 700;
-            color: rgba(150, 180, 190, 0.35);
-            line-height: 1.1;
-            text-align: left;
-            z-index: 1;
-        }
-
-        /* ===== FLOATING BUTTON ===== */
-        #blogs-get-quote-btn {
-            position: fixed;
-            right: 0;
-            top: 40%;
-            background: #00a9b5;
-            color: #ffffff;
-            padding: 14px 18px;
-            font-size: 14px;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            border-radius: 8px 0 0 8px;
-            cursor: pointer;
-            z-index: 99;
-        }
-
-        /* ===== BLOG LISTING ===== */
-        #blog-listing-section {
-            padding: 20px;
-            background: #fff;
-        }
-
-        .blog-wrapper {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        /* LEFT */
-        .blog-main-content {
-            flex: 3 1 60%;
-            min-width: 300px;
-        }
-
-        .blog-filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            gap: 10px;
-        }
-
-        #blog-category-filter {
-            padding: 12px;
-            width: 200px;
-            max-width: 100%;
-        }
-
-        .blog-search-box {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        #blog-search-input {
-            padding: 12px;
-            width: 250px;
-            max-width: 100%;
-            border: 1px solid #ccc;
-        }
-
-        #blog-search-btn {
-            padding: 12px 16px;
-            background: #f36c00;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .blog-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .blog-tag {
-            display: block;
-            margin: 12px 0;
-            color: #777;
-            margin-left: 8px;
-        }
-
-        .blog-card h3 {
-            font-size: 18px;
+        .policy-header h1 {
+            font-size: 2.5rem;
+            color: #03a9b9;
             margin-bottom: 10px;
-            margin-left: 8px;
         }
 
-        .blog-read-more {
-            color: #f36c00;
-            text-decoration: none;
-            margin-left: 8px;
+        .policy-content section {
+            margin-bottom: 40px;
         }
 
-        /* SIDEBAR */
-        .blog-sidebar {
-            flex: 1 1 30%;
-            min-width: 250px;
-        }
-
-        .blog-subscribe-box,
-        .blog-popular-box {
-            background: #f7f7f7;
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-
-        .blog-subscribe-box input {
-            width: 100%;
-            padding: 12px;
-            margin: 15px 0;
-        }
-
-        .blog-subscribe-box button {
-            width: 100%;
-            padding: 12px;
-            background: #fff;
-            border: 1px solid #f36c00;
-            cursor: pointer;
-        }
-
-        .popular-blog-item {
+        .policy-content h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
+            align-items: center;
         }
 
-        .popular-blog-item img {
-            width: 70px;
-            height: 50px;
-            object-fit: cover;
+        .policy-content h2 i {
+            margin-right: 15px;
+            color: #03a9b9;
         }
 
-        /* ===== APL BLOG LISTING ===== */
-        #apl-blog-listing-section {
-            padding: 30px 20px;
+        .policy-content p,
+        .policy-content ul {
+            font-size: 1.05rem;
+            color: #555;
         }
 
-        .apl-blog-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
+        .policy-content ul {
+            padding-left: 20px;
+            list-style-type: disc;
         }
 
-        /* LEFT */
-        .apl-blog-left {
-            flex: 3 1 65%;
-            min-width: 300px;
+        .policy-content ul li {
+            margin-bottom: 10px;
         }
 
-        .apl-blog-card {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-
-        .apl-blog-image img {
-            width: 100%;
-            max-width: 380px;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .apl-blog-content {
-            max-width: 420px;
-            flex: 1 1 100%;
-        }
-
-        .apl-blog-category {
-            color: #777;
-            font-size: 14px;
-        }
-
-        .apl-blog-content h3 {
-            font-size: 20px;
-            margin: 10px 0 15px;
-        }
-
-        .apl-read-more {
-            color: #f36c00;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .apl-blog-meta {
-            margin-top: 15px;
-            font-size: 13px;
-            color: #999;
-        }
-
-        /* SIDEBAR */
-        .apl-blog-sidebar {
-            flex: 1.2 1 30%;
-            min-width: 250px;
-        }
-
-        .apl-sidebar-box {
-            background: #f7f7f7;
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-
-        .apl-sidebar-box h3 {
-            margin-bottom: 20px;
-        }
-
-        .apl-featured-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .apl-featured-item img {
-            width: 70px;
-            height: 55px;
-            object-fit: cover;
-        }
-
-        .apl-featured-item p {
-            font-size: 14px;
-        }
-
-        /* FORM */
-        #apl-enquiry-form input,
-        #apl-enquiry-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-        }
-
-        #apl-enquiry-form button {
-            width: 100%;
-            padding: 12px;
-            background: #f36c00;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media(max-width: 1200px) {
-            .blogs-hero-container {
-                padding: 30px 15px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policy-header h1 {
+                font-size: 2rem;
             }
 
-            .blog-wrapper {
-                gap: 30px;
-            }
-
-            .apl-blog-container {
-                gap: 30px;
-            }
-        }
-
-        @media(max-width: 992px) {
-            .blogs-hero-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .blogs-hero-right {
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            .blogs-made-text {
-                left: 50%;
-                transform: translateX(-50%);
-                top: -20px;
-                font-size: 48px;
-            }
-
-            .blog-wrapper {
-                flex-direction: column;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .apl-blog-container {
-                flex-direction: column;
-            }
-
-            .apl-blog-card {
-                flex-direction: column;
-            }
-
-            .apl-blog-image img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-
-        @media(max-width: 768px) {
-            .blogs-hero-title {
-                font-size: 48px;
-            }
-
-            .blogs-made-text {
-                font-size: 36px;
-            }
-
-            #blog-category-filter,
-            #blog-search-input {
-                width: 100%;
-            }
-        }
-
-        @media(max-width: 576px) {
-            .blogs-hero-title {
-                font-size: 36px;
-            }
-
-            .blogs-made-text {
-                font-size: 28px;
-                top: -10px;
-            }
-
-            .blog-filter-bar {
-                flex-direction: column;
-                gap: 10px;
+            .policy-container {
+                margin: 30px auto;
             }
         }
     </style>
 </head>
 
 <body>
+
     <!-- HEADER SECTION -->
     <div class="header-container">
         <div class="top-section">
@@ -467,22 +117,23 @@
                 </div>
             </div>
 
-            <a href="index.html#product">Products</a>
+            <a href="#product">Products</a>
 
             <!-- ✅ ADVANTAGES LINK ADDED -->
             <a href="advantages.html">Advantages</a>
 
-            <a href="index.html#Space">Spaces</a>
+            <a href="#Space">Spaces</a>
 
             <div class="nav-dropdown">
                 <a href="#">Showcase</a>
                 <div class="nav-dropdown-content">
-                    <a href="index.html#uniqueGallerySection">Gallery</a>
+                    <a href="#uniqueGallerySection">Gallery</a>
                 </div>
             </div>
             <a href="refund-policy.html">Refund policy</a>
             <a href="PrivacyPolicy.html">Privacy Policy</a>
             <a href="TermsAndConditions.html">Terms and conditions </a>
+
             <a href="ContactUs.html">Contact Us</a>
         </nav>
     </div>
@@ -510,240 +161,86 @@
             </div>
         </div>
 
-        <a href="index.html#product" onclick="toggleMenu()">Products</a>
-        <a href="index.html#Space" onclick="toggleMenu()">Spaces</a>
+        <a href="#product" onclick="toggleMenu()">Products</a>
+        <a href="#Space" onclick="toggleMenu()">Spaces</a>
 
         <div class="mobile-dropdown">
             <button class="mobile-dropdown-btn" onclick="toggleMobileDropdown(this)">
                 Showcase <i class="fas fa-chevron-down"></i>
             </button>
             <div class="mobile-dropdown-content">
-                <a href="index.html#uniqueGallerySection" onclick="toggleMenu()">Gallery</a>
+                <a href="#uniqueGallerySection" onclick="toggleMenu()">Gallery</a>
             </div>
         </div>
         <a href="refund-policy.html" onclick="toggleMenu()">Refund policy</a>
         <a href="refund-policy.html" onclick="toggleMenu()">Refund policy</a>
         <a href="TermsAndConditions.html" onclick="toggleMenu()">Terms and conditions</a>
-
         <a href="ContactUs.html" onclick="toggleMenu()">Contact Us</a>
     </nav>
 
-    <!-- FLOATING GET QUOTE -->
-    <div class="get-quote" role="button" tabindex="0" onclick="scrollToEnquiry()">Get Quote</div>
-    <!-- WHATSAPP BUTTON -->
-    <div class="whatsapp-btn" role="button" tabindex="0" onclick="openWhatsApp()" aria-label="Contact via WhatsApp">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    <div class="policy-container">
+        <div class="policy-header">
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: October 2023</p>
+        </div>
+
+        <div class="policy-content">
+            <section>
+                <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+                <p>Welcome to <strong>Prestige Window</strong>. We respect your privacy and are committed to protecting
+                    your personal data. This privacy policy will inform you about how we look after your personal data
+                    when you visit our website and tell you about your privacy rights.</p>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-database"></i> Data We Collect</h2>
+                <p>When you use our enquiry forms or contact us, we may collect the following information:</p>
+                <ul>
+                    <li>Identity Data: Name, Surname.</li>
+                    <li>Contact Data: Email address, Phone numbers, State, and City.</li>
+                    <li>Technical Data: IP address, browser type, and location.</li>
+                    <li>Usage Data: Information about how you use our website and services.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-user-shield"></i> How We Use Your Data</h2>
+                <p>We use your data only for legitimate business purposes, including:</p>
+                <ul>
+                    <li>To process your enquiry and provide a free quote.</li>
+                    <li>To schedule consultation visits and site measurements.</li>
+                    <li>To send updates via Email, SMS, or WhatsApp regarding your requirements (only with your
+                        consent).</li>
+                    <li>To improve our website functionality and customer service.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-share-alt"></i> Third-Party Sharing</h2>
+                <p>We do not sell your personal data. We may share your information with our 1,000+ trusted channel
+                    partners only to fulfill your service requests and ensure timely installation of your uPVC windows
+                    and doors.</p>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-cookie-bite"></i> Cookies</h2>
+                <p>Our website uses cookies to enhance user experience. You can set your browser to refuse all or some
+                    browser cookies, but some parts of this website may become inaccessible or not function properly.
+                </p>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-phone-alt"></i> Contact Us</h2>
+                <p>If you have any questions about this privacy policy or our privacy practices, please contact us at:
+                </p>
+                <p>
+                    <strong>Email:</strong> prestigewindowalu@gmail.com<br>
+                    <strong>Phone:</strong> +91 70075 22507<br>
+                    <strong>Address:</strong> BOKTA DIHWA TOLA, SAHAJANWA, GORAKHPUR-273209 (U.P.)
+                </p>
+            </section>
+        </div>
     </div>
-
-
-
-    <!-- ===== HERO SECTION ===== -->
-    <section id="blogs-hero-section">
-        <div class="blogs-hero-container">
-
-            <!-- LEFT -->
-            <div class="blogs-hero-left">
-                <div class="blogs-breadcrumb">
-                    <span>Home</span> &gt; Blogs
-                </div>
-                <h1 class="blogs-hero-title">Blogs</h1>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog-listing-section">
-        <div class="blog-wrapper">
-
-            <!-- LEFT CONTENT -->
-            <div class="blog-main-content">
-
-                <!-- FILTER BAR -->
-                <div class="blog-filter-bar">
-
-                    <select id="blog-category-filter">
-                        <option value="all">All Blogs</option>
-                        <option value="window">Windows</option>
-                        <option value="door">Doors</option>
-                    </select>
-
-                    <div class="blog-search-box">
-                        <input type="text" id="blog-search-input" placeholder="Search Blogs">
-                        <button id="blog-search-btn">🔍</button>
-                    </div>
-
-                </div>
-
-                <!-- BLOG GRID -->
-                <div class="blog-grid">
-
-                    <!-- BLOG CARD -->
-                    <div class="blog-card" data-category="window">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="">
-                        <span class="blog-tag">Window</span>
-                        <h3>Sliding vs Casement Windows: What’s the Difference?</h3>
-                        <a href="#" class="blog-read-more">Read More →</a>
-                    </div>
-
-                    <!-- BLOG CARD -->
-                    <div class="blog-card" data-category="door">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="">
-                        <span class="blog-tag">Doors</span>
-                        <h3>The Best uPVC Doors and Windows Brand in India</h3>
-                        <a href="#" class="blog-read-more">Read More →</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- RIGHT SIDEBAR -->
-            <aside class="blog-sidebar">
-
-                <!-- SUBSCRIBE -->
-                <div class="blog-subscribe-box">
-                    <h3>Subscribe To Our Blog</h3>
-                    <input type="email" placeholder="Enter Email Address">
-                    <button>Subscribe →</button>
-                </div>
-
-                <!-- POPULAR BLOGS -->
-                <div class="blog-popular-box">
-                    <h3>Popular Blogs</h3>
-
-                    <div class="popular-blog-item">
-                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-                        <p>9 Types of Doors for Indian Homes</p>
-                    </div>
-
-                    <div class="popular-blog-item">
-                        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6">
-                        <p>uPVC vs Aluminium Windows</p>
-                    </div>
-
-                    <div class="popular-blog-item">
-                        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4">
-                        <p>Energy Efficient Windows Guide</p>
-                    </div>
-
-                </div>
-
-            </aside>
-
-        </div>
-    </section>
-    <script>
-        const filter = document.getElementById("blog-category-filter");
-        const cards = document.querySelectorAll(".blog-card");
-
-        filter.addEventListener("change", () => {
-            const value = filter.value;
-
-            cards.forEach(card => {
-                card.style.display =
-                    value === "all" || card.dataset.category === value
-                        ? "block"
-                        : "none";
-            });
-        });
-
-    </script>
-
-    <section id="apl-blog-listing-section">
-        <div class="apl-blog-container">
-
-            <!-- LEFT BLOG LIST -->
-            <div class="apl-blog-left">
-
-                <!-- BLOG ITEM -->
-                <article class="apl-blog-card">
-                    <div class="apl-blog-image">
-                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
-                    </div>
-                    <div class="apl-blog-content">
-                        <span class="apl-blog-category">Doors</span>
-                        <h3>9 Types of Doors for Indian Homes: Wooden, Aluminium, uPVC & More</h3>
-                        <a href="#" class="apl-read-more">Read More →</a>
-                        <div class="apl-blog-meta">- By Prestige Window | 02-Aug-2025</div>
-                    </div>
-                </article>
-
-                <!-- BLOG ITEM -->
-                <article class="apl-blog-card">
-                    <div class="apl-blog-image">
-                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-                    </div>
-                    <div class="apl-blog-content">
-                        <span class="apl-blog-category">Window</span>
-                        <h3>Energy Efficient Windows: Types, Benefits and Installation Tips</h3>
-                        <a href="#" class="apl-read-more">Read More →</a>
-                        <div class="apl-blog-meta">- By Prestige Window | 25-Aug-2025</div>
-                    </div>
-                </article>
-
-                <article class="apl-blog-card">
-                    <div class="apl-blog-image">
-                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-                    </div>
-                    <div class="apl-blog-content">
-                        <span class="apl-blog-category">Window</span>
-                        <h3>Energy Efficient Windows: Types, Benefits and Installation Tips</h3>
-                        <a href="#" class="apl-read-more">Read More →</a>
-                        <div class="apl-blog-meta">- By Prestige Window | 25-Aug-2025</div>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- RIGHT SIDEBAR -->
-            <aside class="apl-blog-sidebar">
-
-                <!-- FEATURED BLOGS -->
-                <div class="apl-sidebar-box">
-                    <h3>Featured Blogs</h3>
-
-                    <div class="apl-featured-item">
-                        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6">
-                        <p>uPVC vs Aluminium Windows: Which One Should You Choose?</p>
-                    </div>
-
-                    <div class="apl-featured-item">
-                        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4">
-                        <p>Energy Efficient Windows: Types, Benefits and Installation Tips</p>
-                    </div>
-
-                    <div class="apl-featured-item">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-                        <p>9 Types of Doors for Indian Homes: Wooden, Aluminium, uPVC & More</p>
-                    </div>
-
-                    <div class="apl-featured-item">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
-                        <p>The Best uPVC Doors and Windows Brand in India</p>
-                    </div>
-                </div>
-
-                <!-- ENQUIRY FORM -->
-                <div class="apl-sidebar-box">
-                    <h3>Enquiry Now</h3>
-                    <form id="apl-enquiry-form">
-                        <input type="text" placeholder="Name*" required>
-                        <input type="tel" placeholder="Phone*" required>
-                        <input type="email" placeholder="Email*">
-                        <textarea placeholder="Message"></textarea>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-
-            </aside>
-
-        </div>
-    </section>
-    <script>
-        document.getElementById("apl-enquiry-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Enquiry Submitted Successfully!");
-        });
-
-    </script>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -799,7 +296,6 @@
             <p>&copy; 2023 Prestige Window. All Rights Reserved. | Designed for Excellence</p>
         </div>
     </footer>
-
 
     <script>
         // ===== IMPROVED MOBILE MENU FUNCTIONALITY =====
@@ -929,8 +425,8 @@
         // ===== UNIQUE EVERY SPACE TABS =====
         const UNIQUE_DATA = {
             residential: [
-                { title: "Patio", subtitle: "Expanded living, entertaining.", img: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-                { title: "Study Room", subtitle: "Quiet focus, natural light.", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+                { title: "Patio", subtitle: "Expanded living, entertaining.", img: "image/patio.webp" },
+                { title: "Study Room", subtitle: "Quiet focus, natural light.", img: "image/studyroom.png" },
                 { title: "Bathroom", subtitle: "Privacy, ventilation, serenity.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
                 { title: "Balcony", subtitle: "Seamless indoor-outdoor living.", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
                 { title: "Kitchen", subtitle: "Fresh air, bright spaces.", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
@@ -1197,6 +693,7 @@
             });
         }
     </script>
+
 </body>
 
 </html>
